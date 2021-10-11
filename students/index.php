@@ -40,6 +40,10 @@
                     </div>
                 </div>
             </nav>
-    </div>
+
+            <!--==================== Add Student Button ====================-->
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
+
+        </div>
 </body>
 </html>
