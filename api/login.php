@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
     //Check Connection
     if($mysqli->connect_errno){
-        echo "Failed to connect database: ".$mysqli->connect_error;
+        echo $mysqli->connect_error;
         exit();
     }
 
