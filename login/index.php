@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +19,8 @@
 </head>
 <body style="margin-top: 100px;">
     <div class="container">
+
+        <!-- Login Panel -->
         <div class="panel panel-default col-md-4 col-md-offset-4">
             <div class="panel-body">
                 <form action="../api/login.php" method="POST"  style="text-align: center;">
@@ -29,6 +35,26 @@
                 </form>
             </div>
         </div>
+
+
+        <!-- Error Message Panel -->
+        <?php
+        if(isset($_SESSION['error_message'])){
+            ?>
+            
+            <div class="panel panel-danger col-md-4 col-md-offset-4">
+                <div class="panel-body">
+                    <?php
+                    echo $_SESSION['error_message'];
+                    session_destroy();
+                    ?>
+                </div>
+            </div>
+            
+            <?php
+        }
+        ?>
+        
     </div>
 </body>
 </html>

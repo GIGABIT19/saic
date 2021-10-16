@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $username = $_POST['username'];
@@ -15,7 +16,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
     //Check Connection
     if($mysqli->connect_errno){
-        echo $mysqli->connect_error;
+        $_SESSION['error_message'] = $mysqli->connect_error;
+        header('location: ../');
         exit();
     }
 
@@ -26,19 +28,30 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     if ($result = $mysqli -> query($SQL)) {
         
         if($result->num_rows==1){
-            session_start();
 
-            $_SESSION['username'] = $username;
+            // $active = 
+
+            $row = $result->fetch_assoc();
+            
+            if($row['active']==1){
+                $_SESSION['username'] = $username;
+                header("location: ../dashboard");
+            } else {
+                $_SESSION['error_message'] = "Your account is inactive";
+                header("location: ../");
+            }
             
 
-            header("location: ../dashboard");
+            
 
         } else {
-            echo "Username or Password Error!";
+            $_SESSION['error_message'] = "Username or Password Error!";
+            header('location: ../');
         }
         
       } else {
-          echo "Something went wrong!";
+          $_SESSION['error_message'] = $mysqli -> error;
+          header('location: ../');
       }
 
     
