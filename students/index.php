@@ -21,7 +21,11 @@ include "../api/include.php";
     
     <title>Students</title>
     <script>
-        
+        $(document).ready(function(){
+            $(".add-btn").on('click',function(){
+                $("#add-modal").modal('show');
+            })
+        })
     </script>
 </head>
 <body>
@@ -54,7 +58,7 @@ include "../api/include.php";
             </nav>
 
             <!--==================== Add Student Button ====================-->
-            <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
+            <button class="btn btn-primary add-btn"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
 
             <!-- DATA Table -->
             <div class="col-md-12">
@@ -90,6 +94,13 @@ include "../api/include.php";
                 </table>
 
             </div>
+
+            <!--Add Student Modal-->
+            <div class="modal fade" id="add-modal">
+                
+            </div>
+
+
         </div>
 </body>
 </html>
