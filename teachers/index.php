@@ -23,29 +23,26 @@ include "../api/include.php";
 
 
     <script>
-        $(document).ready(function() {
-            $(".dlt-btn").on('click', function(){
-                $("#delete-modal").modal('show');
-
-            })
-
-
-            $(".edit-btn").on('click', function(){
-                $("#edit-modal").modal('show');
-            })
-
-
-            $(".add-btn").on('click', function(){
-                $("#add-modal").modal('show');
-            })
-
-            $(".view-btn").on('click', function(){
-              $("#view-modal").modal('show');
-            })
-        })
-
+    $(document).ready(function() {
+      
+      $(".add-btn").on('click', function(){
+        $("#add-modal").modal('show');
+      })
         
+      $(".dlt-btn").on('click', function(){
+        $("#delete-modal").modal('show');
+      })
+      
+      $(".edit-btn").on('click', function(){
+        $("#edit-modal").modal('show');
+      })
+      
+      $(".view-btn").on('click', function(){
+        $("#view-modal").modal('show');
+      })
 
+    })
+    
     </script>
 
 
