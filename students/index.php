@@ -44,6 +44,24 @@
             <!--==================== Add Student Button ====================-->
             <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
 
+            <!-- DATA Table -->
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Roll</th>
+                            <th>Name</th>
+                            <th>Semester</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+            </div>
         </div>
 </body>
 </html>
