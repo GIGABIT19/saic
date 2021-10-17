@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2021 at 09:19 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Oct 17, 2021 at 06:09 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,8 +41,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `active`, `created_at`) VALUES
-(1, 'shahed', '188ee5057377385a7cbc73a7d25e9d66', 1, 2, '2021-10-10 21:41:49'),
-(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1, '2021-10-17 01:10:40');
+(1, 'shahed', '188ee5057377385a7cbc73a7d25e9d66', 1, 1, '2021-10-10 21:41:49'),
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1, '2021-10-17 01:10:40'),
+(3, 'inactive', '19d3894f53ce79c3f836f26cf8a3be3b', 1, 0, '2021-10-17 09:59:27');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
