@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location: ../");
+}
+
+include "../api/include.php";
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,7 +65,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        $SQL = "SELECT * FROM students";
 
+                        $result = mysqli_query($mysqli,$SQL);
+
+                        if($result->num_rows > 0){
+
+                            while($row = $result->fetch_assoc()){
+                                print "<tr>";
+                                print "<td>".$row['roll']."</td>";
+                                print "<td>".$row['name']."</td>";
+                                print "<td>".$row['semester']."</td>";
+                                print "<td>".$row['department']."</td>";
+                            }
+                        }
+
+                        ?>
                     </tbody>
 
                 </table>
