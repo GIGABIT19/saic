@@ -96,7 +96,37 @@ include "../api/include.php";
             </div>
 
             <!--Add Student Modal-->
-            <div class="modal fade" id="add-modal">
+            <div class="modal fade" id="add-modal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4>Add Student</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="api/add_student.php">
+                                <div>
+                                    <input type="number" name="" id="" placeholder="Roll" class="form-control">
+                                </div>
+                                <div>
+                                    <input type="text" name="" id="" placeholder="Name" class="form-control">
+                                </div>
+                                <div>
+                                    <input type="text" name="" id="" placeholder="Semester" class="form-control">
+                                </div>
+                                <div>
+                                    <input type="text" name="" id="" placeholder="Department" class="form-control">
+                                </div>
+                                <div>
+                                    <input type="submit" value="Add Student">
+                                </div>
+                                
+                                
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
 
