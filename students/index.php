@@ -118,7 +118,7 @@ include "../api/include.php";
                                     <input type="text" name="" id="" placeholder="Department" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Add Student">
+                                    <input class="btn btn-primary" type="submit" value="Add Student">
                                 </div>
                                 
                                 
