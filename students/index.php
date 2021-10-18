@@ -106,16 +106,16 @@ include "../api/include.php";
                         <div class="modal-body">
                             <form action="../api/add_student.php" method="POST">
                                 <div class="form-group">
-                                    <input type="number" name="" id="" placeholder="Roll" class="form-control">
+                                    <input type="number" name="" id="" placeholder="Roll" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" id="" placeholder="Name" class="form-control">
+                                    <input type="text" name="" id="" placeholder="Name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" id="" placeholder="Semester" class="form-control">
+                                    <input type="text" name="" id="" placeholder="Semester" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" id="" placeholder="Department" class="form-control">
+                                    <input type="text" name="" id="" placeholder="Department" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <input class="btn btn-primary" type="submit" value="Add Student">
