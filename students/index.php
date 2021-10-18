@@ -104,7 +104,7 @@ include "../api/include.php";
                             <h4 class="modal-title">Add Teacher</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="api/add_student.php" method="POST">
+                            <form action="../api/add_student.php" method="POST">
                                 <div class="form-group">
                                     <input type="number" name="" id="" placeholder="Roll" class="form-control">
                                 </div>
