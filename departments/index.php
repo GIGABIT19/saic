@@ -43,6 +43,26 @@
 
 
             <!--DATA TABLE-->
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Department</th>
+                            <th>Total Student</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Computer Technology</td>
+                            <td><!--To Do:--></td>
+                        </tr>
+                        <tr>
+                            <td>Electrial Technology</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
     </div>
     
