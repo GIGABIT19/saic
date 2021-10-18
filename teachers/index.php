@@ -35,6 +35,21 @@ include "../api/include.php";
       
       $(".edit-btn").on('click', function(){
         $("#edit-modal").modal('show');
+
+        $tr = $(this).closest('tr');
+        var data = $tr.children('td').map(function(){
+          return $(this).text();
+        }).get();
+        
+        console.log(data);
+        $('#update_id').val(data[0]);
+        $('#update_name').val(data[1]);
+        $('#update_designation').val(data[2]);
+        $('#update_department').val(data[3]);
+        $('#update_phone').val(data[4]);
+        $('#update_email').val(data[5]);
+        
+
       })
       
       $(".view-btn").on('click', function(){
@@ -152,11 +167,9 @@ include "../api/include.php";
     </div>
   </div>
 
-    <!--========== Edit Confirmation Modal ==========-->
+    <!--==================== Edit Modal ====================-->
   <div class="modal fade" id="edit-modal" role="dialog">
     <div class="modal-dialog">
-    
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -164,29 +177,38 @@ include "../api/include.php";
         </div>
         <div class="modal-body">
             <form action="">
-              <div class="form-group">
-                <input type="text" placeholder="Name" class="form-control">
+            <div class="form-group">
+              <label for="update_id">Id:</label>
+                <input type="text" id="update_id" class="form-control" readonly>
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Designation" class="form-control">
+              <label for="update_id">Name:</label>
+                <input type="text" id="update_name" class="form-control">
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Department" class="form-control">
+              <label for="update_id">Designation:</label>
+                <input type="text" id="update_designation" class="form-control">
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Phone Number" class="form-control">
+              <label for="update_id">Department:</label>
+                <input type="text" id="update_department" class="form-control">
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
+              <label for="update_id">Phone Number:</label>
+                <input type="text" id="update_phone" class="form-control">
               </div>
               <div class="form-group">
-                <input class="btn btn-info" type="submit" placeholder="Phone Number" value="Update">
+              <label for="update_id">Email:</label>
+                <input type="text" id="update_email" class="form-control">
+              </div>
+              <div class="form-group">
+                <input class="btn btn-info" type="submit" value="Update">
               </div>
             </form>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+        </div> -->
       </div>
       
     </div>
