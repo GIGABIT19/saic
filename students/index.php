@@ -101,23 +101,23 @@ include "../api/include.php";
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4>Add Student</h4>
+                            <h4 class="modal-title">Add Teacher</h4>
                         </div>
                         <div class="modal-body">
                             <form action="api/add_student.php">
-                                <div>
+                                <div class="form-group">
                                     <input type="number" name="" id="" placeholder="Roll" class="form-control">
                                 </div>
-                                <div>
+                                <div class="form-group">
                                     <input type="text" name="" id="" placeholder="Name" class="form-control">
                                 </div>
-                                <div>
+                                <div class="form-group">
                                     <input type="text" name="" id="" placeholder="Semester" class="form-control">
                                 </div>
-                                <div>
+                                <div class="form-group">
                                     <input type="text" name="" id="" placeholder="Department" class="form-control">
                                 </div>
-                                <div>
+                                <div class="form-group">
                                     <input type="submit" value="Add Student">
                                 </div>
                                 
