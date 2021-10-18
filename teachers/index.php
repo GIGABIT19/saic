@@ -226,14 +226,14 @@ include "../api/include.php";
               </div>
               
               <div class="form-group">
-                <input class="btn btn-primary" type="submit">
+                <input class="btn btn-primary" type="submit" value="Add Teacher">
               </div>
               
           </form>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+        </div> -->
       </div>
       
     </div>
