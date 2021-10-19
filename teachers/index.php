@@ -270,8 +270,27 @@ include "../api/include.php";
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Teacher Data</h4>
           </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer"></div>
+          <div class="modal-body">
+            <div>
+              <label for="view_name">Name:&nbsp;</label><span id="view_name">name</span>
+            </div>
+            <div>
+              <label for="view_designation">Designation:&nbsp;</label><span id="view_designation">designation</span>
+            </div>
+            <div>
+              <label for="view_department">Department:&nbsp;</label><span id="view_department">department</span>
+            </div>
+            <div>
+              <label for="view_department">Phone Number:&nbsp;</label><span id="view_phone_number">phone number</span>
+            </div>
+            <div>
+              <label for="view_department">Email:&nbsp;</label><span id="view_email">email</span>
+            </div>
+            
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-print"> Print</span></button>
+          </div>
         </div>
       </div>
 
