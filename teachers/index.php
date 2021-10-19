@@ -54,6 +54,21 @@ include "../api/include.php";
       
       $(".view-btn").on('click', function(){
         $("#view-modal").modal('show');
+
+        $tr = $(this).closest('tr');
+        var data = $tr.children('td').map(function(){
+          return $(this).text();
+        }).get();
+
+        console.log(data);
+        $("#view_teacher_title").text(data[1]);
+        $("#view_id").text(data[0]);
+        $("#view_name").text(data[1]);
+        $("#view_designation").text(data[2]);
+        $("#view_department").text(data[3]);
+        $("#view_phone").text(data[4]);
+        $("#view_email").text(data[5]);
+
       })
 
     })
@@ -268,28 +283,32 @@ include "../api/include.php";
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Teacher Data</h4>
+            <h4 class="modal-title" id="view_teacher_title">Teacher Data</h4>
           </div>
           <div class="modal-body">
-            <div>
+            <div class="form-group">
+              <label for="view_name">Id:&nbsp;</label><span id="view_id"></span>
+            </div>
+            <div class="form-group">
               <label for="view_name">Name:&nbsp;</label><span id="view_name">name</span>
             </div>
-            <div>
+            <div class="form-group">
               <label for="view_designation">Designation:&nbsp;</label><span id="view_designation">designation</span>
             </div>
-            <div>
+            <div class="form-group">
               <label for="view_department">Department:&nbsp;</label><span id="view_department">department</span>
             </div>
-            <div>
-              <label for="view_department">Phone Number:&nbsp;</label><span id="view_phone_number">phone number</span>
+            <div class="form-group">
+              <label for="view_department">Phone Number:&nbsp;</label><span id="view_phone">phone number</span>
             </div>
-            <div>
+            <div class="form-group">
               <label for="view_department">Email:&nbsp;</label><span id="view_email">email</span>
             </div>
             
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary"><span class="glyphicon glyphicon-print"> Print</span></button>
+            <button id="print_button" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>
+            
           </div>
         </div>
       </div>
