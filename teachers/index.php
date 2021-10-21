@@ -110,6 +110,18 @@ include "../api/include.php";
             <!--========== Add Teacher Button ==========-->
             <button class="btn btn-primary add-btn"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
             
+            <?php
+
+              if(isset($_SESSION['success_msg'])){
+                echo $_SESSION['success_msg'];
+              }
+
+              if(isset($_SESSION['error_msg'])){
+                echo $_SESSION['error_msg'];
+              }
+
+            ?>
+
             <!--========== Data Table ==========-->
             <div class="col-md-12">
                 <table class="table">
@@ -191,30 +203,30 @@ include "../api/include.php";
           <h4 class="modal-title">Edit</h4>
         </div>
         <div class="modal-body">
-            <form action="">
+            <form action="../api/update_teacher.php" method="POST">
             <div class="form-group">
               <label for="update_id">Id:</label>
-                <input type="text" id="update_id" class="form-control" readonly>
+                <input type="text" id="update_id" class="form-control" readonly required name="id">
               </div>
               <div class="form-group">
               <label for="update_id">Name:</label>
-                <input type="text" id="update_name" class="form-control">
+                <input type="text" id="update_name" class="form-control" required name="name">
               </div>
               <div class="form-group">
               <label for="update_id">Designation:</label>
-                <input type="text" id="update_designation" class="form-control">
+                <input type="text" id="update_designation" class="form-control" required name="designation">
               </div>
               <div class="form-group">
               <label for="update_id">Department:</label>
-                <input type="text" id="update_department" class="form-control">
+                <input type="text" id="update_department" class="form-control" required name="department">
               </div>
               <div class="form-group">
               <label for="update_id">Phone Number:</label>
-                <input type="text" id="update_phone" class="form-control">
+                <input type="text" id="update_phone" class="form-control" required name="phone">
               </div>
               <div class="form-group">
               <label for="update_id">Email:</label>
-                <input type="text" id="update_email" class="form-control">
+                <input type="text" id="update_email" class="form-control" required name="email">
               </div>
               <div class="form-group">
                 <input class="btn btn-info" type="submit" value="Update">
