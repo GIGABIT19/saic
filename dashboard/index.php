@@ -50,7 +50,7 @@ if(!isset($_SESSION['username'])){
             <div class="col-md-12">
                 <div class="panel panel-success">
                     <div class="panel-heading">Welcome</div>
-                    <div class="panel-body"><h1><?php echo 'Welcome '.$_SESSION['username']; ?> <br></h1></div>
+                    <div class="panel-body"><h1><?php echo 'Welcome '.ucfirst($_SESSION['username']); ?> <br></h1></div>
                 </div>
             </div>
             
