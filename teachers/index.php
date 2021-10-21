@@ -20,7 +20,11 @@ include "../api/include.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <style>
+      @page {
+        size: auto;
+        margin: 0mm; }
+    </style>
 
     <script>
     $(document).ready(function() {
@@ -69,6 +73,12 @@ include "../api/include.php";
         $("#view_phone").text(data[4]);
         $("#view_email").text(data[5]);
 
+        $('#view_print_button').on('click',function(){
+          //$('.view_data').printThis();
+          window.print();
+          
+        })
+
       })
 
     })
@@ -83,7 +93,6 @@ include "../api/include.php";
         <!--Nav-->
         <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"></span>
@@ -108,7 +117,7 @@ include "../api/include.php";
             </nav>
 
             <!--========== Add Teacher Button ==========-->
-            <button class="btn btn-primary add-btn"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
+            <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
             
             <?php
 
@@ -123,7 +132,7 @@ include "../api/include.php";
             ?>
 
             <!--========== Data Table ==========-->
-            <div class="col-md-12">
+            <div class="col-md-12 hidden-print">
                 <table class="table">
                     <thead>
                         <tr>
@@ -276,51 +285,48 @@ include "../api/include.php";
               
               <div class="form-group">
                 <input class="btn btn-primary" type="submit" value="Add Teacher">
-              </div>
-              
+              </div>  
           </form>
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div> -->
       </div>
-      
     </div>
   </div>
 
-    <!--========== View User Modal ==========-->
+    <!--==================== View User Modal ====================-->
     <div class="modal fade" id="view-modal" role="dialog">
       <div class="modal-dialog">
-        <!-- Modal Content -->
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        <div class="modal-header">
+            <button type="button" class="close hidden-print" data-dismiss="modal">&times;</button>
             <h4 class="modal-title" id="view_teacher_title">Teacher Data</h4>
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="view_name">Id:&nbsp;</label><span id="view_id"></span>
+
+          <div class="modal-body view_data">
+            <div>
+              <div class="form-group">
+                <label for="view_name">Id:&nbsp;</label><span id="view_id"></span>
+              </div>
+              <div class="form-group">
+                <label for="view_name">Name:&nbsp;</label><span id="view_name">name</span>
+              </div>
+              <div class="form-group">
+                <label for="view_designation">Designation:&nbsp;</label><span id="view_designation">designation</span>
+              </div>
+              <div class="form-group">
+                <label for="view_department">Department:&nbsp;</label><span id="view_department">department</span>
+              </div>
+              <div class="form-group">
+                <label for="view_department">Phone Number:&nbsp;</label><span id="view_phone">phone number</span>
+              </div>
+              <div class="form-group">
+                <label for="view_department">Email:&nbsp;</label><span id="view_email">email</span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="view_name">Name:&nbsp;</label><span id="view_name">name</span>
-            </div>
-            <div class="form-group">
-              <label for="view_designation">Designation:&nbsp;</label><span id="view_designation">designation</span>
-            </div>
-            <div class="form-group">
-              <label for="view_department">Department:&nbsp;</label><span id="view_department">department</span>
-            </div>
-            <div class="form-group">
-              <label for="view_department">Phone Number:&nbsp;</label><span id="view_phone">phone number</span>
-            </div>
-            <div class="form-group">
-              <label for="view_department">Email:&nbsp;</label><span id="view_email">email</span>
-            </div>
-            
           </div>
-          <div class="modal-footer">
-            <button id="print_button" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>
-            
+          
+          <div class="modal-footer hidden-print">
+            <button id="view_print_button" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>
           </div>
         </div>
       </div>
