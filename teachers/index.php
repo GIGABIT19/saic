@@ -157,9 +157,9 @@ include "../api/include.php";
                                 print "<td>".$row['department']."</td>";
                                 print "<td>".$row['phone_number']."</td>";
                                 print "<td>".$row['email']."</td>";
-                                print "<td><a class='btn btn-primary view-btn' href='#'><span class='glyphicon glyphicon-eye-open'></span></a> ";
-                                print "<a class='btn btn-info edit-btn' href='#'><span class='glyphicon glyphicon-pencil'></span></a> ";
-                                print "<a class='btn btn-danger dlt-btn' href='#'><span class='glyphicon glyphicon-trash'></span></a></td>";
+                                print "<td><button class='btn btn-primary view-btn' href='#'><span class='glyphicon glyphicon-eye-open'></span></button> ";
+                                print "<button class='btn btn-info edit-btn' href='#'><span class='glyphicon glyphicon-pencil'></span></button> ";
+                                print "<button class='btn btn-danger dlt-btn' href='#'><span class='glyphicon glyphicon-trash'></span></button></td>";
                                 
                                 print "</tr>";
                             }

@@ -12,7 +12,7 @@ $email = $_POST['email'];
 
 include_once "include.php";
 
-$sql = "UPDATE `teachers` SET `name` = '$name', `designation` = '$designation', `department` = '$department', `phone` = '$phone', `email` = '$email' WHERE `teachers`.`id` = '$id'";
+$sql = "UPDATE `teachers` SET `name` = '$name', `designation` = '$designation', `department` = '$department', `phone_number` = '$phone', `email` = '$email' WHERE `teachers`.`id` = '$id'";
 
 if($mysqli->query($sql) === TRUE) {
     $_SESSION['success_msg'] = "Updated Successfully";
