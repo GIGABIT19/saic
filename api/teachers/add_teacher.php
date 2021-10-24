@@ -1,4 +1,5 @@
 <?php
+//config file
 require_once "../include.php";
 
 //Data Receiving Check
@@ -12,19 +13,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $email = $_POST['email'];
 
     //SQL
-    $SQL = "INSERT INTO `teachers` (`name`,`designation`,`department`,`phone_number`,`email`) VALUES ('$full_name','$designation','$department','$phone_number','$email')";
+    $SQL = "INSERT INTO `teachers` (`name`,`designation`,`department`,`phone_number`,`email`)
+            VALUES ('$full_name','$designation','$department','$phone_number','$email')";
 
     if ($mysqli->query($SQL) === TRUE) {
-        
+        //success message
         header("Location: ../../teachers");
-
       } else {
+        //failed message
         echo $mysqli->error;
       }
 
-
-
-
 } else {
-    header("Location: ../teachers");
+    header("Location: ../../teachers");
 }
