@@ -129,15 +129,17 @@ include "../api/include.php";
 
               if(isset($_SESSION['success_msg'])){
                 echo $_SESSION['success_msg'];
+                unset($_SESSION['success_msg']);
               }
 
               if(isset($_SESSION['error_msg'])){
                 echo $_SESSION['error_msg'];
+                unset($_SESSION['error_msg']);
               }
 
             ?>
 
-            <!--==================== Data Table ====================-->
+            <!--==================== Teachers Data Table ====================-->
             <div class="col-md-12 hidden-print">
                 <table class="table">
                     <thead>
@@ -181,7 +183,7 @@ include "../api/include.php";
             </div>
     </div>
 
-    <!--==================== Delete User Modal ====================-->
+    <!--==================== Delete Teacher Modal ====================-->
   <div class="modal fade" id="delete-modal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">

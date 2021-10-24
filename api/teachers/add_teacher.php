@@ -1,4 +1,5 @@
 <?php
+session_start();
 //config file
 require_once "../include.php";
 
@@ -18,10 +19,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     if ($mysqli->query($SQL) === TRUE) {
         //success message
-        header("Location: ../../teachers");
+        header("location: ../../teachers");
       } else {
         //failed message
-        echo $mysqli->error;
+        $_SESSION['error_msg'] = $mysqli->error;
+        header("location: ../../teachers");
       }
 
 } else {
