@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             VALUES ('$full_name','$designation','$department','$phone_number','$email')";
 
     if ($mysqli->query($SQL) === TRUE) {
-        //success message
+        $_SESSION['success_msg'] = "Teacher added successfully.";
         header("location: ../../teachers");
       } else {
         //failed message
