@@ -35,6 +35,14 @@ include "../api/include.php";
         
       $(".dlt-btn").on('click', function(){
         $("#delete-modal").modal('show');
+
+        $tr = $(this).closest('tr');
+        var data = $tr.children('td').map(function(){
+          return $(this).text();
+        }).get();
+
+        $("#delete_id").val(data[0]);
+
       })
       
       $(".edit-btn").on('click', function(){
@@ -74,9 +82,7 @@ include "../api/include.php";
         $("#view_email").text(data[5]);
 
         $('#view_print_button').on('click',function(){
-          //$('.view_data').printThis();
           window.print();
-          
         })
 
       })
@@ -166,9 +172,9 @@ include "../api/include.php";
                                 print "<td>".$row['department']."</td>";
                                 print "<td>".$row['phone_number']."</td>";
                                 print "<td>".$row['email']."</td>";
-                                print "<td><button class='btn btn-primary view-btn' href='#'><span class='glyphicon glyphicon-eye-open'></span></button> ";
-                                print "<button class='btn btn-info edit-btn' href='#'><span class='glyphicon glyphicon-pencil'></span></button> ";
-                                print "<button class='btn btn-danger dlt-btn' href='#'><span class='glyphicon glyphicon-trash'></span></button></td>";
+                                print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
+                                print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
+                                print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
                                 
                                 print "</tr>";
                             }
@@ -181,21 +187,22 @@ include "../api/include.php";
             </div>
     </div>
 
-    <!--========== Delete User Confirmation Modal ==========-->
+    <!--========== Delete User Modal ==========-->
   <div class="modal fade" id="delete-modal" role="dialog">
     <div class="modal-dialog">
-    
-      
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Delete Confirmation</h4>
         </div>
         <div class="modal-body">
-          <p>Do you want to delete?</p>
+        <p>Do you want to delete?</p>
+          <form action="../api/delete_teacher.php" method="POST">
+            <input type="hidden" id="delete_id" name="delete_id">
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-danger" id="delete-confirm-btn">Delete</button>
+            </form>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -242,20 +249,14 @@ include "../api/include.php";
               </div>
             </form>
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div> -->
       </div>
-      
     </div>
   </div>
 
 
-    <!--========== Add User Modal ==========-->
+    <!--==================== Add User Modal ====================-->
   <div class="modal fade" id="add-modal" role="dialog">
     <div class="modal-dialog">
-
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
