@@ -1,5 +1,5 @@
 <?php
-require_once "include.php";
+require_once "../include.php";
 
 //Data Receiving Check
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     if ($mysqli->query($SQL) === TRUE) {
         
-        header("Location: ../teachers");
+        header("Location: ../../teachers");
 
       } else {
         echo $mysqli->error;

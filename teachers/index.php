@@ -96,7 +96,7 @@ include "../api/include.php";
 </head>
 <body>
     <div class="container">
-        <!--Nav-->
+        <!--==================== Nav ====================-->
         <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -122,7 +122,7 @@ include "../api/include.php";
                 </div>
             </nav>
 
-            <!--========== Add Teacher Button ==========-->
+            <!--==================== Add Teacher Button ====================-->
             <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
             
             <?php
@@ -137,7 +137,7 @@ include "../api/include.php";
 
             ?>
 
-            <!--========== Data Table ==========-->
+            <!--==================== Data Table ====================-->
             <div class="col-md-12 hidden-print">
                 <table class="table">
                     <thead>
@@ -152,14 +152,8 @@ include "../api/include.php";
                         </tr>
                     </thead>
                     <tbody>
-
-                        <?php
-
-                        //include
-                        
-
+                      <?php
                         $SQL = "SELECT * FROM teachers";
-
                         $result = mysqli_query($mysqli,$SQL);
 
                         if($result->num_rows > 0){
@@ -187,7 +181,7 @@ include "../api/include.php";
             </div>
     </div>
 
-    <!--========== Delete User Modal ==========-->
+    <!--==================== Delete User Modal ====================-->
   <div class="modal fade" id="delete-modal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -254,7 +248,7 @@ include "../api/include.php";
   </div>
 
 
-    <!--==================== Add User Modal ====================-->
+    <!--==================== Add Teacher Modal ====================-->
   <div class="modal fade" id="add-modal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -263,7 +257,7 @@ include "../api/include.php";
           <h4 class="modal-title">Add Teacher</h4>
         </div>
         <div class="modal-body">
-          <form action="../api/add_teacher.php" method="POST">
+          <form action="../api/teachers/add_teacher.php" method="POST">
               <div class="form-group">
                 <input type="text" placeholder="Full Name" name="full_name" required class="form-control">
               </div>
