@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         header("Location: ../teachers");
 
       } else {
-        echo "Error: " . $SQL . "<br>" . $mysqli->error;
+        echo $mysqli->error;
       }
 
 
