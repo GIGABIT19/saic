@@ -124,16 +124,15 @@ include "../api/include.php";
 
             <!--==================== Add Teacher Button ====================-->
             <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
-            
             <?php
 
               if(isset($_SESSION['success_msg'])){
-                echo $_SESSION['success_msg'];
+                echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
                 unset($_SESSION['success_msg']);
               }
 
               if(isset($_SESSION['error_msg'])){
-                echo $_SESSION['error_msg'];
+                echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
                 unset($_SESSION['error_msg']);
               }
 
