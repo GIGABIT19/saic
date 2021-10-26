@@ -54,40 +54,47 @@ if(!isset($_SESSION['username'])){
                 </div>
             </div>
             
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="panel panel-success">
                     <div class="panel-heading">Total Users</div>
-                    <div class="panel-body"><h1>2</h1></div>
+                    <div class="panel-body"><h1>
+                    <?php
+                        include '../api/include.php';
+                        $sql = "SELECT * FROM `users`;";
+                        $result = mysqli_query($mysqli,$sql);
+                        echo mysqli_num_rows($result);
+                        ?>
+                    </h1></div>
                 </div>
             </div>
             
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="panel panel-success">
                     <div class="panel-heading">Total Teachers</div>
-                    <div class="panel-body"><h1>2</h1></div>
+                    <div class="panel-body"><h1>
+                        <?php
+                        include '../api/include.php';
+                        $sql = "SELECT * FROM `teachers`;";
+                        $result = mysqli_query($mysqli,$sql);
+                        echo mysqli_num_rows($result);
+                        ?>
+                    </h1></div>
                 </div>
             </div>
             
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="panel panel-success">
                     <div class="panel-heading">Total Students</div>
-                    <div class="panel-body"><h1>2</h1></div>
+                    <div class="panel-body"><h1>
+                    <?php
+                        include '../api/include.php';
+                        $sql = "SELECT * FROM `students`;";
+                        $result = mysqli_query($mysqli,$sql);
+                        echo mysqli_num_rows($result);
+                        ?>
+                    </h1></div>
                 </div>
             </div>
-            
-            <div class="col-md-3">
-                <div class="panel panel-success">
-                    <div class="panel-heading">Total Departments</div>
-                    <div class="panel-body"><h1>2</h1></div>
-                </div>
-            </div>
-
-
-
-
-
-           
-            
         </div>
     </body>
 </html>
