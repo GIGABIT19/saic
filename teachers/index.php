@@ -142,14 +142,17 @@ include "../api/include.php";
             ?>
 
             <!--==================== Search ====================-->
-            <form action="">
+            <div class="col-md-offset-6 col-md-3">
+            <form action="" method="POST">
               <div class="input-group">
-                <div class="form-group">
-                  <input class="form-control" type="text" name="" id="">
+                <input type="text" class="form-control" name="search_input">
+                <div class="input-group-btn">
+                  <input class="btn btn-info" type="submit" value="Search" name="search_button">
                 </div>
-                <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
               </div>
             </form>
+            </div>
+            
 
             <!--==================== Teachers Data Table ====================-->
             <div class="col-md-12 hidden-print">
@@ -167,7 +170,13 @@ include "../api/include.php";
                     </thead>
                     <tbody>
                       <?php
-                        $SQL = "SELECT * FROM teachers";
+                      if(isset($_POST['search_button'])){
+                        $search_input = $_POST['search_input'];
+                        $SQL = "SELECT * FROM `teachers` WHERE CONCAT(`id`,`name`,`designation`,`department`,`phone_number`,`email`) LIKE '%$search_input%'";
+                      } else {
+                        $SQL = "SELECT * FROM `teachers`";
+                      }
+
                         $result = mysqli_query($mysqli,$SQL);
 
                         if($result->num_rows > 0){
@@ -187,6 +196,8 @@ include "../api/include.php";
                                 print "</tr>";
                             }
 
+                        } else {
+                          echo "<tr><td colspan='7'>No Data Found</td></tr>";
                         }
 
                         ?>
@@ -285,11 +296,11 @@ include "../api/include.php";
               </div>
               
               <div class="form-group">
-                <input type="text" placeholder="Phone Number" name="phone_number" required class="form-control">
+                <input type="phone" placeholder="Phone Number" name="phone_number" required class="form-control">
               </div>
               
               <div class="form-group">
-                <input type="text" placeholder="Email" name="email" required class="form-control">
+                <input type="email" placeholder="Email" name="email" required class="form-control">
               </div>
               
               <div class="form-group">
