@@ -123,7 +123,10 @@ include "../api/include.php";
             </nav>
 
             <!--==================== Add Teacher Button ====================-->
+            <div class="col-md-3">
             <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
+            </div>
+            
             <?php
 
               if(isset($_SESSION['success_msg'])){
@@ -137,6 +140,16 @@ include "../api/include.php";
               }
 
             ?>
+
+            <!--==================== Search ====================-->
+            <form action="">
+              <div class="input-group">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="" id="">
+                </div>
+                <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </form>
 
             <!--==================== Teachers Data Table ====================-->
             <div class="col-md-12 hidden-print">
