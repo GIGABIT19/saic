@@ -172,7 +172,7 @@ include "../api/include.php";
               <?php
               if(isset($_POST['search_button'])){
                 $search_input = $_POST['search_input'];
-                $SQL = "SELECT * FROM `teachers` WHERE CONCAT(`id`,`name`,`designation`,`department`,`phone_number`,`email`) LIKE '%$search_input%'";
+                $SQL = "SELECT * FROM `teachers` WHERE CONCAT(`id`,`name`,`designation`,`department`,`phone`,`email`) LIKE '%$search_input%'";
               } else {
                 $SQL = "SELECT * FROM `teachers`";
               }
@@ -187,7 +187,7 @@ include "../api/include.php";
                                 print "<td>".$row['name']."</td>";
                                 print "<td>".$row['designation']."</td>";
                                 print "<td>".$row['department']."</td>";
-                                print "<td>".$row['phone_number']."</td>";
+                                print "<td>".$row['phone']."</td>";
                                 print "<td>".$row['email']."</td>";
                                 print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
                                 print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
