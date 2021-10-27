@@ -178,102 +178,94 @@ include "../api/include.php";
               }
               
               $result = mysqli_query($mysqli,$SQL);
-
-                        if($result->num_rows > 0){
-                            
-                            while($row = $result->fetch_assoc()){
-                                print "<tr>";
-                                print "<td>".$row['id']."</td>";
-                                print "<td>".$row['name']."</td>";
-                                print "<td>".$row['designation']."</td>";
-                                print "<td>".$row['department']."</td>";
-                                print "<td>".$row['phone']."</td>";
-                                print "<td>".$row['email']."</td>";
-                                print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
-                                print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
-                                print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
-                                
-                                print "</tr>";
-                            }
-
-                        } else {
-                          echo "<tr><td colspan='7'>No Data Found</td></tr>";
-                        }
-
-                        ?>
-                    </tbody>
-                </table>
+              if($result->num_rows > 0){              
+                while($row = $result->fetch_assoc()){
+                  print "<tr>";
+                  print "<td>".$row['id']."</td>";
+                  print "<td>".$row['name']."</td>";
+                  print "<td>".$row['designation']."</td>";
+                  print "<td>".$row['department']."</td>";
+                  print "<td>".$row['phone']."</td>";
+                  print "<td>".$row['email']."</td>";
+                  print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
+                  print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
+                  print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
+                  print "</tr>";
+                }
+              } else {
+                echo "<tr><td colspan='7'>No Data Found</td></tr>";
+              }
+              ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!--==================== Delete Teacher Modal ====================-->
+        <div class="modal fade" id="delete-modal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Confirmation</h4>
+              </div>
+              <div class="modal-body">
+                <p>Do you want to delete?</p>
+                <form action="../api/delete_teacher.php" method="POST">
+                <input type="hidden" id="delete_id" name="delete_id">
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-danger" id="delete-confirm-btn">Delete</button>
+                </form>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
             </div>
-    </div>
-
-    <!--==================== Delete Teacher Modal ====================-->
-  <div class="modal fade" id="delete-modal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Delete Confirmation</h4>
+          </div>
         </div>
-        <div class="modal-body">
-        <p>Do you want to delete?</p>
-          <form action="../api/delete_teacher.php" method="POST">
-            <input type="hidden" id="delete_id" name="delete_id">
-        </div>
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-danger" id="delete-confirm-btn">Delete</button>
-            </form>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-    <!--==================== Edit Modal ====================-->
-  <div class="modal fade" id="edit-modal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit</h4>
-        </div>
-        <div class="modal-body">
-            <form action="../api/update_teacher.php" method="POST">
-            <div class="form-group">
-              <label for="update_id">Id:</label>
-                <input type="text" id="update_id" class="form-control" readonly required name="id">
+        
+        <!--==================== Edit Teacher Modal ====================-->
+        <div class="modal fade" id="edit-modal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit</h4>
               </div>
-              <div class="form-group">
-              <label for="update_id">Name:</label>
-                <input type="text" id="update_name" class="form-control" required name="name">
-              </div>
-              <div class="form-group">
-              <label for="update_id">Designation:</label>
-                <input type="text" id="update_designation" class="form-control" required name="designation">
-              </div>
-              <div class="form-group">
-              <label for="update_id">Department:</label>
-                <input type="text" id="update_department" class="form-control" required name="department">
-              </div>
-              <div class="form-group">
-              <label for="update_id">Phone Number:</label>
-                <input type="text" id="update_phone" class="form-control" required name="phone">
-              </div>
-              <div class="form-group">
-              <label for="update_id">Email:</label>
-                <input type="text" id="update_email" class="form-control" required name="email">
-              </div>
-              <div class="form-group">
-                <input class="btn btn-info" type="submit" value="Update">
-              </div>
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <!--==================== Add Teacher Modal ====================-->
+              <div class="modal-body">
+                <form action="../api/update_teacher.php" method="POST">
+                <div class="form-group">
+                  <label for="update_id">Id:</label>
+                  <input type="text" id="update_id" class="form-control" readonly required name="id">
+                </div>
+                <div class="form-group">
+                  <label for="update_id">Name:</label>
+                  <input type="text" id="update_name" class="form-control" required name="name">
+                </div>
+                <div class="form-group">
+                  <label for="update_id">Designation:</label>
+                  <input type="text" id="update_designation" class="form-control" required name="designation">
+                </div>
+                <div class="form-group">
+                  <label for="update_id">Department:</label>
+                  <input type="text" id="update_department" class="form-control" required name="department">
+                </div>
+                <div class="form-group">
+                  <label for="update_id">Phone Number:</label>
+                  <input type="text" id="update_phone" class="form-control" required name="phone">
+                </div>
+                <div class="form-group">
+                  <label for="update_id">Email:</label>
+                  <input type="text" id="update_email" class="form-control" required name="email">
+                </div>
+                <div class="form-group">
+                  <input class="btn btn-info" type="submit" value="Update">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div></div>
+        
+        <!--==================== Add Teacher Modal ====================-->
   <div class="modal fade" id="add-modal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -283,19 +275,16 @@ include "../api/include.php";
         </div>
         <div class="modal-body">
           <form action="../api/teachers/add_teacher.php" method="POST">
-              <div class="form-group">
-                <input type="text" placeholder="Full Name" name="full_name" required class="form-control">
-              </div>
-
-              <div class="form-group">
-                <input type="text" placeholder="Designation" name="designation" required class="form-control">
-              </div>
-
-              <div class="form-group">
-                <input type="text" placeholder="Department" name="department" required class="form-control">                        
-              </div>
-              
-              <div class="form-group">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" name="full_name" required class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Designation" name="designation" required class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Department" name="department" required class="form-control">                        
+          </div>
+          <div class="form-group">
                 <input type="phone" placeholder="Phone Number" name="phone_number" required class="form-control">
               </div>
               
