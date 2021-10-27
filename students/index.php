@@ -105,21 +105,24 @@ include "../api/include.php";
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add Teacher</h4>
+                            <h4 class="modal-title">Add Student</h4>
                         </div>
                         <div class="modal-body">
                             <form action="../api/students/add_student.php" method="POST">
                                 <div class="form-group">
-                                    <input type="number" name="" id="" placeholder="Roll" class="form-control" required>
+                                    <input type="number" name="" placeholder="Roll" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" id="" placeholder="Name" class="form-control" required>
+                                    <input type="text" name="" placeholder="Name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" id="" placeholder="Semester" class="form-control" required>
+                                    <input type="text" name="" placeholder="Phone" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" id="" placeholder="Department" class="form-control" required>
+                                    <input type="text" name="" placeholder="Semester" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="" placeholder="Department" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <input class="btn btn-primary" type="submit" value="Add Student">
