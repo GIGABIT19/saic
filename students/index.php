@@ -67,8 +67,10 @@ include "../api/include.php";
                         <tr>
                             <th>Roll</th>
                             <th>Name</th>
+                            <th>Phone</th>
                             <th>Semester</th>
                             <th>Department</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,8 +85,10 @@ include "../api/include.php";
                                 print "<tr>";
                                 print "<td>".$row['roll']."</td>";
                                 print "<td>".$row['name']."</td>";
+                                print "<td>".$row['phone']."</td>";
                                 print "<td>".$row['semester']."</td>";
                                 print "<td>".$row['department']."</td>";
+                                print "</tr>";
                             }
                         }
 
