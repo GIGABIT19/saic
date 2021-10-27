@@ -14,8 +14,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $email = $_POST['email'];
 
     //SQL
-    $SQL = "INSERT INTO `teachers` (`name`,`designation`,`department`,`phone_number`,`email`)
-            VALUES ('$full_name','$designation','$department','$phone_number','$email')";
+    $SQL = "INSERT INTO `teachers` (`name`,`designation`,`department`,`phone`,`email`) VALUES
+    ('$full_name','$designation','$department','$phone_number','$email')";
 
     if ($mysqli->query($SQL) === TRUE) {
         $_SESSION['success_msg'] = "Teacher added successfully.";

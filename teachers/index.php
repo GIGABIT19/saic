@@ -161,7 +161,7 @@ include "../api/include.php";
                 <th>Name</th>
                 <th>Designation</th>
                 <th>Department</th>
-                <th>Phone Number</th>
+                <th>Phone</th>
                 <th>Email</th>
                 <th>Action</th>
               </tr>
