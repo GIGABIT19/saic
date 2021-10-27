@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `teachers` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `name` varchar(30) NOT NULL,
   `designation` varchar(30) NOT NULL,
   `department` varchar(30) NOT NULL,
-  `phone_number` varchar(11) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,7 +42,7 @@ CREATE TABLE `teachers` (
 -- Dumping data for table `teachers`
 --
 
-INSERT INTO `teachers` (`id`, `name`, `designation`, `department`, `phone_number`, `email`, `created_at`) VALUES
+INSERT INTO `teachers` (`id`, `name`, `designation`, `department`, `phone`, `email`, `created_at`) VALUES
 (1, 'Jahid Hasan', 'Jr. Instructor', 'Computer', '01812457825', 'jahid@saic.com', '2021-10-10 21:47:58'),
 (2, 'Nibash Gharami', 'Instructor', 'Architechture', '01871235689', 'nibash@saic.com', '2021-10-10 21:51:43'),
 (3, 'Robiul', 'Instructor', 'Civil', '01812457845', 'robi@saic.com', '2021-10-10 21:52:49'),
@@ -67,8 +67,7 @@ INSERT INTO `teachers` (`id`, `name`, `designation`, `department`, `phone_number
 -- Indexes for table `teachers`
 --
 ALTER TABLE `teachers`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `phone_number` (`phone_number`),
+  ADD UNIQUE KEY `phone` (`phone`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
