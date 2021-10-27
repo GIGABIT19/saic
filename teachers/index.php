@@ -98,86 +98,86 @@ include "../api/include.php";
     <div class="container">
         <!--==================== Nav ====================-->
         <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="../dashboard">SIMT</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="../dashboard">Dashboard</a></li>
-                            <li class="active"><a href="../teachers">Teachers</a></li>
-                            <li><a href="../students">Students</a></li>
-                            <li><a href="../departments">Departments</a></li>
-                            <li><a href="../users">Users</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="../api/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <!--==================== Add Teacher Button ====================-->
-            <div class="col-md-3">
-            <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../dashboard">SIMT</a>
             </div>
-            
-            <?php
-
-              if(isset($_SESSION['success_msg'])){
-                echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
-                unset($_SESSION['success_msg']);
-              }
-
-              if(isset($_SESSION['error_msg'])){
-                echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
-                unset($_SESSION['error_msg']);
-              }
-
-            ?>
-
-            <!--==================== Search ====================-->
-            <div class="col-md-offset-6 col-md-3">
-            <form action="" method="POST">
-              <div class="input-group">
-                <input type="text" class="form-control" name="search_input">
-                <div class="input-group-btn">
-                  <input class="btn btn-info" type="submit" value="Search" name="search_button">
-                </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="../dashboard">Dashboard</a></li>
+                <li class="active"><a href="../teachers">Teachers</a></li>
+                <li><a href="../students">Students</a></li>
+                <li><a href="../departments">Departments</a></li>
+                <li><a href="../users">Users</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="../api/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <!--==================== Add Teacher Button ====================-->
+        <div class="col-md-3">
+          <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Teacher</button>
+        </div>
+        
+        <!--==================== Search ====================-->
+        <div class="col-md-offset-6 col-md-3 hidden-print">
+          <form action="" method="POST">
+            <div class="input-group">
+              <input type="text" class="form-control" name="search_input" required>
+              <div class="input-group-btn">
+                <input class="btn btn-info" type="submit" value="Search" name="search_button">
               </div>
-            </form>
             </div>
-            
+          </form>
+        </div>
+        
+        <!--==================== Add Teacher Message ====================-->
+        <?php
+        if(isset($_SESSION['success_msg'])){
+          echo $_SESSION['success_msg'];
+          unset($_SESSION['success_msg']);
+        }
+        
+        if(isset($_SESSION['error_msg'])){
+          echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
+          unset($_SESSION['error_msg']);
+        }
+        ?>
+        
+        <!--==================== Teachers Data Table ====================-->
+        <div class="col-md-12 hidden-print">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
 
-            <!--==================== Teachers Data Table ====================-->
-            <div class="col-md-12 hidden-print">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Designation</th>
-                            <th>Department</th>
-                            <th>Phone Number</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                      if(isset($_POST['search_button'])){
-                        $search_input = $_POST['search_input'];
-                        $SQL = "SELECT * FROM `teachers` WHERE CONCAT(`id`,`name`,`designation`,`department`,`phone_number`,`email`) LIKE '%$search_input%'";
-                      } else {
-                        $SQL = "SELECT * FROM `teachers`";
-                      }
-
-                        $result = mysqli_query($mysqli,$SQL);
+            <!--==================== Data Load ====================-->
+              <?php
+              if(isset($_POST['search_button'])){
+                $search_input = $_POST['search_input'];
+                $SQL = "SELECT * FROM `teachers` WHERE CONCAT(`id`,`name`,`designation`,`department`,`phone_number`,`email`) LIKE '%$search_input%'";
+              } else {
+                $SQL = "SELECT * FROM `teachers`";
+              }
+              
+              $result = mysqli_query($mysqli,$SQL);
 
                         if($result->num_rows > 0){
                             
