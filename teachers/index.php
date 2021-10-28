@@ -211,7 +211,7 @@ include "../api/include.php";
               </div>
               <div class="modal-body">
                 <p>Do you want to delete?</p>
-                <form action="../api/delete_teacher.php" method="POST">
+                <form action="../api/teachers/delete_teacher.php" method="POST">
                 <input type="hidden" id="delete_id" name="delete_id">
               </div>
               <div class="modal-footer">
@@ -301,7 +301,7 @@ include "../api/include.php";
     </div>
   </div>
 
-    <!--==================== View User Modal ====================-->
+    <!--==================== View Teacher Modal ====================-->
     <div class="modal fade" id="view-modal" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
