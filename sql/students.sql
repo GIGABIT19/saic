@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `students` (
   `roll` int(6) NOT NULL,
   `name` varchar(30) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `semester` varchar(3) NOT NULL,
   `department` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,8 +39,8 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`roll`, `name`, `semester`, `department`) VALUES
-(145797, 'Shahed Mohammad Hridoy', '5th', 'Computer');
+INSERT INTO `students` (`roll`, `name`, `phone`, `semester`, `department`) VALUES
+(145797, 'Shahed Mohammad Hridoy', '01848135202', '5th', 'Computer');
 
 --
 -- Indexes for dumped tables
