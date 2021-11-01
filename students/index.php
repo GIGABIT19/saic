@@ -88,6 +88,9 @@ include "../api/include.php";
                                 print "<td>".$row['phone']."</td>";
                                 print "<td>".$row['semester']."</td>";
                                 print "<td>".$row['department']."</td>";
+                                print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
+                                print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
+                                print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
                                 print "</tr>";
                             }
                         }
@@ -99,7 +102,7 @@ include "../api/include.php";
 
             </div>
 
-            <!--Add Student Modal-->
+            <!--==================== Add Student Modal ====================-->
             <div class="modal fade" id="add-modal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
