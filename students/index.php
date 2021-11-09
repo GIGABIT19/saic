@@ -113,19 +113,19 @@ include "../api/include.php";
                         <div class="modal-body">
                             <form action="../api/students/add_student.php" method="POST">
                                 <div class="form-group">
-                                    <input type="number" name="" placeholder="Roll" class="form-control" required>
+                                    <input type="number" name="roll" placeholder="Roll" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="Name" class="form-control" required>
+                                    <input type="text" name="name" placeholder="Name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="Phone" class="form-control" required>
+                                    <input type="text" name="phone" placeholder="Phone" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="Semester" class="form-control" required>
+                                    <input type="text" name="semester" placeholder="Semester" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="Department" class="form-control" required>
+                                    <input type="text" name="department" placeholder="Department" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <input class="btn btn-primary" type="submit" value="Add Student">
@@ -154,12 +154,7 @@ include "../api/include.php";
 
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
-</head>
+
 <body>
     <div class="container">
 
