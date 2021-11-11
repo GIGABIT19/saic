@@ -285,7 +285,13 @@ include "../api/include.php";
             <input type="text" placeholder="Department" name="department" required class="form-control">                        
           </div>
           <div class="form-group">
-                <input type="phone" placeholder="Phone Number" name="phone_number" required class="form-control">
+            <div class="input-group">
+            <span class="input-group-addon">+88</span>
+            <input type="phone" placeholder="Phone Number" name="phone_number" required class="form-control">
+
+            </div>
+            
+                
               </div>
               
               <div class="form-group">
