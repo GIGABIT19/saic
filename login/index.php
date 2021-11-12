@@ -23,16 +23,16 @@ if(isset($_SESSION['username'])){
 <body style="margin-top: 100px;">
     <div class="container">
 
-        <!-- Login Panel -->
+        <!--==================== Login Panel ====================-->
         <div class="panel panel-default col-md-4 col-md-offset-4">
             <div class="panel-body">
                 <form action="../api/login.php" method="POST"  style="text-align: center;">
                     <img src="logo.png" alt="Logo" width="100px" style="margin-bottom: 20px;">
                     <div class="form-group">
-                        <input type="text" placeholder="Username" class="form-control" name="username">
+                        <input type="text" placeholder="Username" class="form-control" name="username" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control" name="password">
+                        <input type="password" placeholder="Password" class="form-control" name="password" required>
                     </div>
                     <button class="btn btn-primary" type="submit">Login</button>
                 </form>
@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])){
         </div>
 
 
-        <!-- Error Message Panel -->
+        <!--==================== Error Message Panel ====================-->
         <?php
         if(isset($_SESSION['error_message'])){
             ?>
