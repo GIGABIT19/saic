@@ -315,24 +315,14 @@ include "../api/include.php";
         </div>
         <div class="modal-body view_data">
           <div>
-            <div class="form-group">
-              <label for="view_name">Id:&nbsp;</label><span id="view_id"></span>
-            </div>
-            <div class="form-group">
-              <label for="view_name">Name:&nbsp;</label><span id="view_name">name</span>
-            </div>
-            <div class="form-group">
-              <label for="view_designation">Designation:&nbsp;</label><span id="view_designation">designation</span>
-            </div>
-            <div class="form-group">
-              <label for="view_department">Department:&nbsp;</label><span id="view_department">department</span>
-            </div>
-            <div class="form-group">
-              <label for="view_department">Phone Number:&nbsp;</label><span id="view_phone">phone number</span>
-            </div>
-            <div class="form-group">
-              <label for="view_department">Email:&nbsp;</label><span id="view_email">email</span>
-            </div>
+            <table>
+              <tr><td style="padding: 5px;"><label for="view_id">Id:</label></td><td><span id="view_id"></span></td></tr>
+              <tr><td style="padding: 5px;"><label for="view_name">Name:</td><td><span id="view_name"></span></td></tr>
+              <tr><td style="padding: 5px;"><label for="view_designation">Designation:</td><td><span id="view_designation"></span></td></tr>
+              <tr><td style="padding: 5px;"><label for="view_department">Department:</td><td><span id="view_department"></span></td></tr>
+              <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
+              <tr><td style="padding: 5px;"><label for="view_email">Email:</td><td><span id="view_email"></span></td></tr>
+            </table>
           </div>
         </div>
         <div class="modal-footer hidden-print">
