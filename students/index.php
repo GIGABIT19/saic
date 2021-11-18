@@ -107,7 +107,12 @@ include "../api/include.php";
                 <tbody>
                     <!--==================== Data Load ====================-->
                     <?php
-                    $SQL = "SELECT * FROM students";
+                    if(isset($_POST['search_button'])){
+                        $search_input = $_POST['search_input'];
+                        $SQL = "SELECT * FROM `students` WHERE CONCAT(`roll`,`name`,`phone`,`semester`,`department`) LIKE '%$search_input%'";
+                    } else {
+                        $SQL = "SELECT * FROM students";
+                    }
                     $result = mysqli_query($mysqli,$SQL);
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
@@ -128,40 +133,41 @@ include "../api/include.php";
                 </tbody>
             </table>
         </div>
-        
-        <!--==================== Add Student Modal ====================-->
-        <div class="modal fade" id="add-modal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Student</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="../api/students/add_student.php" method="POST">
-                            <div class="form-group">
-                                <input type="number" name="roll" placeholder="Roll" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="phone" placeholder="Phone" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="semester" placeholder="Semester" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="department" placeholder="Department" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="btn btn-primary" type="submit" value="Add Student">
-                            </div>
-                        </form>
-                    </div>
+    </div>
+    
+    <!--==================== Add Student Modal ====================-->
+    <div class="modal fade" id="add-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Student</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="../api/students/add_student.php" method="POST">
+                        <div class="form-group">
+                            <input type="number" name="roll" placeholder="Roll" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="Phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="semester" placeholder="Semester" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="department" placeholder="Department" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" value="Add Student">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
