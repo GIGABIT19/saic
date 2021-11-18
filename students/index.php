@@ -78,7 +78,20 @@ include "../api/include.php";
             </form>
         </div>
         
-        <!--==================== Teachers Data Table ====================-->
+        <!--==================== Add Teacher Message ====================-->
+        <?php
+        if(isset($_SESSION['success_msg'])){
+            echo $_SESSION['success_msg'];
+            unset($_SESSION['success_msg']);
+        }
+        
+        if(isset($_SESSION['error_msg'])){
+            echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
+            unset($_SESSION['error_msg']);
+        }
+        ?>
+        
+        <!--==================== Students Data Table ====================-->
         <div class="col-md-12">
             <table class="table">
                 <thead>
