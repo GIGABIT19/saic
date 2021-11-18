@@ -62,7 +62,21 @@ include "../api/include.php";
         </nav>
         
         <!--==================== Add Student Button ====================-->
-        <button class="btn btn-primary add-btn"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
+        <div class="col-md-3">
+            <button class="btn btn-primary add-btn"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
+        </div>
+
+        <!--==================== Search Box ====================-->
+        <div class="col-md-offset-6 col-md-3 hidden-print">
+            <form action="" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="search_input" required>
+                    <div class="input-group-btn">
+                        <input class="btn btn-info" type="submit" value="Search" name="search_button">
+                    </div>
+                </div>
+            </form>
+        </div>
         
         <!--==================== Teachers Data Table ====================-->
         <div class="col-md-12">
