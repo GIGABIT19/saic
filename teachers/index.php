@@ -214,22 +214,31 @@ include "../api/include.php";
         <div class="modal-body">
           <form action="../api/teachers/add_teacher.php" method="POST">
             <div class="form-group">
-              <input type="text" placeholder="Full Name" name="full_name" required class="form-control">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="full_name" class="form-control" placeholder="Full Name" required>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Designation" name="designation" required class="form-control">
+              <label for="designation">Designation:</label>
+              <input type="text" id="designation" name="designation" class="form-control" placeholder="Designation" required>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Department" name="department" required class="form-control">
+              <label for="department">Department:</label>
+              <select id="department" name="department" class="form-control">
+                <option value="Computer">Computer</option>
+                <option value="Civil">Civil</option>
+                <option value="Electronics">Electronics</option>
+              </select>
             </div>
             <div class="form-group">
+              <label for="phone">Phone:</label>
               <div class="input-group">
                 <span class="input-group-addon">+88</span>
-                <input type="phone" placeholder="Phone Number" name="phone_number" required class="form-control">
+                <input type="phone" id="phone" name="phone_number" class="form-control" placeholder="Phone Number" required>
               </div>
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Email" name="email" required class="form-control">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
             </div>
             <div class="form-group">
               <input class="btn btn-primary" type="submit" value="Add Teacher">
