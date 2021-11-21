@@ -22,13 +22,46 @@ include "../api/include.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      @page {
+        size: auto;
+        margin: 0mm; }
+    </style>
     
     
     <script>
         $(document).ready(function(){
+
+            //Add Student Button On Click Action
             $(".add-btn").on('click',function(){
                 $("#add-modal").modal('show');
             })
+
+            //View Student Button On Click Action
+            $(".view-btn").on('click', function(){
+                $("#view-modal").modal('show');
+                
+                $tr = $(this).closest('tr');
+                
+                var data = $tr.children('td').map(function(){
+                    return $(this).text()    
+                }).get();
+                
+                //console.log(data);
+                $("#view_student_title").text(data[1]);
+                $("#view_roll").text(data[0]);
+                $("#view_name").text(data[1]);
+                $("#view_phone").text(data[2]);
+                $("#view_semester").text(data[3]);
+                $("#view_department").text(data[4]);
+                
+                
+                $('#view_print_button').on('click',function(){
+                    window.print();
+                })
+            })
+
         })
     </script>
 </head>
@@ -62,7 +95,7 @@ include "../api/include.php";
         </nav>
         
         <!--==================== Add Student Button ====================-->
-        <div class="col-md-3">
+        <div class="col-md-3 hidden-print">
             <button class="btn btn-primary add-btn"><span class="glyphicon glyphicon-plus"></span> Add Student</button>
         </div>
 
@@ -78,7 +111,7 @@ include "../api/include.php";
             </form>
         </div>
         
-        <!--==================== Add Teacher Message ====================-->
+        <!--==================== Add Student Message ====================-->
         <?php
         if(isset($_SESSION['success_msg'])){
             echo $_SESSION['success_msg'];
@@ -92,7 +125,7 @@ include "../api/include.php";
         ?>
         
         <!--==================== Students Data Table ====================-->
-        <div class="col-md-12">
+        <div class="col-md-12 hidden-print">
             <table class="table">
                 <thead>
                     <tr>
@@ -168,6 +201,33 @@ include "../api/include.php";
             </div>
         </div>
     </div>
+
+    <!--==================== View Student Modal ====================-->
+    <div class="modal fade" id="view-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close hidden-print" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="view_student_title">Student Data</h4>
+                </div>
+                <div class="modal-body view_data">
+                    <div>
+                        <table>
+                            <tr><td style="padding: 5px;"><label for="view_roll">Roll:</label></td><td><span id="view_roll"></span></td></tr>
+                            <tr><td style="padding: 5px;"><label for="view_name">Name:</td><td><span id="view_name"></span></td></tr>
+                            <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
+                            <tr><td style="padding: 5px;"><label for="view_semester">Semester:</td><td><span id="view_semester"></span></td></tr>
+                            <tr><td style="padding: 5px;"><label for="view_department">Department:</td><td><span id="view_department"></span></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer hidden-print">
+                    <button id="view_print_button" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
