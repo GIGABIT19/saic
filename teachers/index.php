@@ -283,7 +283,7 @@ include "../api/include.php";
           <h4 class="modal-title">Edit</h4>
         </div>
         <div class="modal-body">
-          <form action="../api/update_teacher.php" method="POST">
+          <form action="../api/teachers/update_teacher.php" method="POST">
             <div class="form-group">
               <label for="update_id">Id:</label>
               <input type="text" id="update_id" class="form-control" readonly required name="id">
@@ -294,7 +294,10 @@ include "../api/include.php";
             </div>
             <div class="form-group">
               <label for="update_id">Designation:</label>
-              <input type="text" id="update_designation" class="form-control" required name="designation">
+              <select name="designation" id="update_designation" class="form-control">
+                <option value="Jr. Instructor">Jr. Instructor</option>
+                <option value="Instructor">Instructor</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="update_id">Department:</label>
