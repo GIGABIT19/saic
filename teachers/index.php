@@ -219,7 +219,10 @@ include "../api/include.php";
             </div>
             <div class="form-group">
               <label for="designation">Designation:</label>
-              <input type="text" id="designation" name="designation" class="form-control" placeholder="Designation" required>
+              <select name="designation" id="designation" class="form-control">
+                <option value="Jr. Instructor">Jr. Instructor</option>
+                <option value="Instructor" selected>Instructor</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="department">Department:</label>
