@@ -227,9 +227,15 @@ include "../api/include.php";
             <div class="form-group">
               <label for="department">Department:</label>
               <select id="department" name="department" class="form-control">
-                <option value="Computer">Computer</option>
-                <option value="Civil">Civil</option>
-                <option value="Electronics">Electronics</option>
+                <option value="">computer</option>
+                <option value="">telecommunication</option>
+                <option value="">civil</option>
+                <option value="">automobile</option>
+                <option value="">architecture</option>
+                <option value="electrical">electrical</option>
+                <option value="">textile</option>
+                <option value="">garments</option>
+                <option value="">mechanical</option>
               </select>
             </div>
             <div class="form-group">
