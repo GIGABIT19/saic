@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2021 at 06:17 AM
+-- Generation Time: Dec 23, 2021 at 07:16 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `students` (
   `roll` int(6) NOT NULL,
   `name` varchar(30) NOT NULL,
+  `session` varchar(9) NOT NULL,
   `phone` varchar(11) NOT NULL,
-  `semester` varchar(3) NOT NULL,
   `department` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,8 +39,8 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`roll`, `name`, `phone`, `semester`, `department`) VALUES
-(145797, 'Shahed Mohammad Hridoy', '01848135202', '5th', 'Computer');
+INSERT INTO `students` (`roll`, `name`, `session`, `phone`, `department`) VALUES
+(145797, 'Shahed Mohammad Hridoy', '', '01848135202', 'Computer');
 
 --
 -- Indexes for dumped tables

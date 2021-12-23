@@ -12,13 +12,14 @@ if(!isset($_SESSION['username'])){
         
         $roll = $_POST['roll'];
         $name = $_POST['name'];
+        $session = $_POST['session'];
         $phone = $_POST['phone'];
         $semester = $_POST['semester'];
         $department = $_POST['department'];
         
         
-        $SQL = "INSERT INTO `students` (`roll`, `name`, `phone`, `semester`, `department`) VALUES
-        ('$roll', '$name', '$phone', '$semester', '$department')";
+        $SQL = "INSERT INTO `students` (`roll`, `name`, `session`, `phone`, `department`) VALUES
+        ('$roll', '$name', '$session', '$phone', '$department')";
 
         if($mysqli->query($SQL) == TRUE){
             $_SESSION['success_msg'] = "Student added successfully.";

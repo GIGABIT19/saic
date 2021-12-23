@@ -34,12 +34,12 @@ include "../api/include.php";
         $(document).ready(function(){
 
             //Add Student Button On Click Action
-            $(".add-btn").on('click',function(){
+            $('.add-btn').on('click',function(){
                 $("#add-modal").modal('show');
             })
 
             //View Student Button On Click Action
-            $(".view-btn").on('click', function(){
+            $('.view-btn').on('click', function(){
                 $("#view-modal").modal('show');
                 
                 $tr = $(this).closest('tr');
@@ -49,17 +49,22 @@ include "../api/include.php";
                 }).get();
                 
                 //console.log(data);
-                $("#view_student_title").text(data[1]);
-                $("#view_roll").text(data[0]);
-                $("#view_name").text(data[1]);
-                $("#view_phone").text(data[2]);
-                $("#view_semester").text(data[3]);
-                $("#view_department").text(data[4]);
+                $('#view_student_title').text(data[1]);
+                $('#view_roll').text(data[0]);
+                $('#view_name').text(data[1]);
+                $('#view_phone').text(data[2]);
+                $('#view_semester').text(data[3]);
+                $('#view_department').text(data[4]);
                 
                 
                 $('#view_print_button').on('click',function(){
                     window.print();
                 })
+            })
+
+            //Edit Student Button On Click Action
+            $('.edit-btn').on('click', function(){
+                $('#edit-modal').modal('show');
             })
 
         })
@@ -131,8 +136,8 @@ include "../api/include.php";
                     <tr>
                         <th>Roll</th>
                         <th>Name</th>
+                        <th>Session</th>
                         <th>Phone</th>
-                        <th>Semester</th>
                         <th>Department</th>
                         <th>Action</th>
                     </tr>
@@ -152,8 +157,8 @@ include "../api/include.php";
                             print "<tr>";
                             print "<td>".$row['roll']."</td>";
                             print "<td>".$row['name']."</td>";
+                            print "<td>".$row['session']."</td>";
                             print "<td>".$row['phone']."</td>";
-                            print "<td>".$row['semester']."</td>";
                             print "<td>".$row['department']."</td>";
                             print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
                             print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
@@ -179,19 +184,37 @@ include "../api/include.php";
                 <div class="modal-body">
                     <form action="../api/students/add_student.php" method="POST">
                         <div class="form-group">
-                            <input type="number" name="roll" placeholder="Roll" class="form-control" required>
+                            <label for="roll">Roll:</label>
+                            <input type="number" name="roll" placeholder="Roll" class="form-control" id="roll" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Name" class="form-control" required>
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" placeholder="Name" class="form-control" id="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="phone" placeholder="Phone" class="form-control" required>
+                            <label for="session">Session:</label>
+                            <input type="text" name="session" placeholder="Session" class="form-control" id="session" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="semester" placeholder="Semester" class="form-control" required>
+                            <label for="phone">Phone:</label>
+                            <input type="text" name="phone" placeholder="Phone" class="form-control" id="phone" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="department" placeholder="Department" class="form-control" required>
+                            <label for="department">Department:</label>
+                            <select id="department" name="department" class="form-control">
+                                <option value="Computer">Computer</option>
+                                <option value="Telecommunication">Telecommunication</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Automobile">Automobile</option>
+                                <option value="Architecture">Architecture</option>
+                                <option value="Electrical">Electrical</option>
+                                <option value="Textile">Textile</option>
+                                <option value="Garments">Garments</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Marine">Marine</option>
+                                <option value="Shipbuilding">Shipbuilding</option>
+                                <option value="Electronics">Electronics</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-primary" type="submit" value="Add Student">
@@ -211,18 +234,37 @@ include "../api/include.php";
                     <h4 class="modal-title" id="view_student_title">Student Data</h4>
                 </div>
                 <div class="modal-body view_data">
-                    <div>
-                        <table>
-                            <tr><td style="padding: 5px;"><label for="view_roll">Roll:</label></td><td><span id="view_roll"></span></td></tr>
-                            <tr><td style="padding: 5px;"><label for="view_name">Name:</td><td><span id="view_name"></span></td></tr>
-                            <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
-                            <tr><td style="padding: 5px;"><label for="view_semester">Semester:</td><td><span id="view_semester"></span></td></tr>
-                            <tr><td style="padding: 5px;"><label for="view_department">Department:</td><td><span id="view_department"></span></td></tr>
-                        </table>
-                    </div>
+                    <table>
+                        <tr><td style="padding: 5px;"><label for="view_roll">Roll:</label></td><td><span id="view_roll"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_name">Name:</td><td><span id="view_name"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_semester">Semester:</td><td><span id="view_semester"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_department">Department:</td><td><span id="view_department"></span></td></tr>
+                    </table>
                 </div>
                 <div class="modal-footer hidden-print">
                     <button id="view_print_button" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--==================== Edit Student Modal ====================-->
+    <div class="modal" id="edit-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <input type="text" name="" id="">
+                        <input type="text" name="" id="">
+                        <input type="text" name="" id="">
+                        <input type="text" name="" id="">
+                        <input type="text" name="" id="">
+                    </form>
                 </div>
             </div>
         </div>
