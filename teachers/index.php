@@ -227,15 +227,18 @@ include "../api/include.php";
             <div class="form-group">
               <label for="department">Department:</label>
               <select id="department" name="department" class="form-control">
-                <option value="">computer</option>
-                <option value="">telecommunication</option>
-                <option value="">civil</option>
-                <option value="">automobile</option>
-                <option value="">architecture</option>
-                <option value="electrical">electrical</option>
-                <option value="">textile</option>
-                <option value="">garments</option>
-                <option value="">mechanical</option>
+                <option value="Computer">Computer</option>
+                <option value="Telecommunication">Telecommunication</option>
+                <option value="Civil">Civil</option>
+                <option value="Automobile">Automobile</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Textile">Textile</option>
+                <option value="Garments">Garments</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Marine">Marine</option>
+                <option value="Shipbuilding">Shipbuilding</option>
+                <option value="Electronics">Electronics</option>
               </select>
             </div>
             <div class="form-group">
@@ -307,7 +310,20 @@ include "../api/include.php";
             </div>
             <div class="form-group">
               <label for="update_id">Department:</label>
-              <input type="text" id="update_department" class="form-control" required name="department">
+              <select id="update_department" name="department" class="form-control">
+                <option value="Computer">Computer</option>
+                <option value="Telecommunication">Telecommunication</option>
+                <option value="Civil">Civil</option>
+                <option value="Automobile">Automobile</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Textile">Textile</option>
+                <option value="Garments">Garments</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Marine">Marine</option>
+                <option value="Shipbuilding">Shipbuilding</option>
+                <option value="Electronics">Electronics</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="update_id">Phone Number:</label>
