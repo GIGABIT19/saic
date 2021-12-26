@@ -52,9 +52,9 @@ include "../api/include.php";
                 $('#view_student_title').text(data[1]);
                 $('#view_roll').text(data[0]);
                 $('#view_name').text(data[1]);
-                $('#view_phone').text(data[2]);
-                $('#view_semester').text(data[3]);
-                $('#view_department').text(data[4]);
+                $('#view_session').text(data[2]);
+                $('#view_department').text(data[3]);
+                $('#view_phone').text(data[4]);
                 
                 
                 $('#view_print_button').on('click',function(){
@@ -137,8 +137,8 @@ include "../api/include.php";
                         <th>Roll</th>
                         <th>Name</th>
                         <th>Session</th>
-                        <th>Phone</th>
                         <th>Department</th>
+                        <th>Phone</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -158,8 +158,8 @@ include "../api/include.php";
                             print "<td>".$row['roll']."</td>";
                             print "<td>".$row['name']."</td>";
                             print "<td>".$row['session']."</td>";
-                            print "<td>".$row['phone']."</td>";
                             print "<td>".$row['department']."</td>";
+                            print "<td>".$row['phone']."</td>";
                             print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
                             print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
                             print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
@@ -196,10 +196,6 @@ include "../api/include.php";
                             <input type="text" name="session" placeholder="Session" class="form-control" id="session" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone:</label>
-                            <input type="text" name="phone" placeholder="Phone" class="form-control" id="phone" required>
-                        </div>
-                        <div class="form-group">
                             <label for="department">Department:</label>
                             <select id="department" name="department" class="form-control">
                                 <option value="Computer">Computer</option>
@@ -215,6 +211,10 @@ include "../api/include.php";
                                 <option value="Shipbuilding">Shipbuilding</option>
                                 <option value="Electronics">Electronics</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" name="phone" placeholder="Phone" class="form-control" id="phone" required>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-primary" type="submit" value="Add Student">
@@ -237,9 +237,9 @@ include "../api/include.php";
                     <table>
                         <tr><td style="padding: 5px;"><label for="view_roll">Roll:</label></td><td><span id="view_roll"></span></td></tr>
                         <tr><td style="padding: 5px;"><label for="view_name">Name:</td><td><span id="view_name"></span></td></tr>
-                        <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
-                        <tr><td style="padding: 5px;"><label for="view_semester">Semester:</td><td><span id="view_semester"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_session">Session:</td><td><span id="view_session"></span></td></tr>
                         <tr><td style="padding: 5px;"><label for="view_department">Department:</td><td><span id="view_department"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
                     </table>
                 </div>
                 <div class="modal-footer hidden-print">
@@ -250,7 +250,7 @@ include "../api/include.php";
     </div>
 
     <!--==================== Edit Student Modal ====================-->
-    <div class="modal" id="edit-modal" role="dialog">
+    <div class="modal fade" id="edit-modal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -259,11 +259,24 @@ include "../api/include.php";
                 </div>
                 <div class="modal-body">
                     <form action="">
-                        <input type="text" name="" id="">
-                        <input type="text" name="" id="">
-                        <input type="text" name="" id="">
-                        <input type="text" name="" id="">
-                        <input type="text" name="" id="">
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="Roll" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="Session">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="Department">
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-info" type="submit" value="Update">
+                        </div>
                     </form>
                 </div>
             </div>
