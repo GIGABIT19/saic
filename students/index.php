@@ -271,26 +271,26 @@ include "../api/include.php";
                     <h4 class="modal-title">Edit</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="../api/students/update_student.php" method="POST">
                         <div class="form-group">
                             <label for="update_roll">Roll:</label>
-                            <input type="text" name="" id="update_roll" placeholder="Roll" class="form-control">
+                            <input type="text" name="update_roll" id="update_roll" placeholder="Roll" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="update_name">Name:</label>
-                            <input type="text" name="" id="update_name" placeholder="Name" class="form-control">
+                            <input type="text" name="update_name" id="update_name" placeholder="Name" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="update_session">Session:</label>
-                            <input type="text" name="" id="update_session" placeholder="Session" class="form-control">
+                            <input type="text" name="update_session" id="update_session" placeholder="Session" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="update_department">Department:</label>
-                            <input type="text" name="" id="update_department" placeholder="Department" class="form-control">
+                            <input type="text" name="update_department" id="update_department" placeholder="Department" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="update_phone">Phone:</label>
-                            <input type="text" name="" id="update_phone" placeholder="Phone" class="form-control">
+                            <input type="text" name="update_phone" id="update_phone" placeholder="Phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <input class="btn btn-info" type="submit" value="Update">
