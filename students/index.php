@@ -65,6 +65,19 @@ include "../api/include.php";
             //Edit Student Button On Click Action
             $('.edit-btn').on('click', function(){
                 $('#edit-modal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children('td').map(function(){
+                    return $(this).text()
+                }).get();
+
+                //console.log(data);
+                $('#update_roll').val(data[0]);
+                $('#update_name').val(data[1]);
+                $('#update_session').val(data[2]);
+                $('#update_department').val(data[3]);
+                $('#update_phone').val(data[4]);
             })
 
         })
@@ -260,19 +273,24 @@ include "../api/include.php";
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Roll" class="form-control">
+                            <label for="update_roll">Roll:</label>
+                            <input type="text" name="" id="update_roll" placeholder="Roll" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Name" class="form-control">
+                            <label for="update_name">Name:</label>
+                            <input type="text" name="" id="update_name" placeholder="Name" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Session">
+                            <label for="update_session">Session:</label>
+                            <input type="text" name="" id="update_session" placeholder="Session" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Phone">
+                            <label for="update_department">Department:</label>
+                            <input type="text" name="" id="update_department" placeholder="Department" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Department">
+                            <label for="update_phone">Phone:</label>
+                            <input type="text" name="" id="update_phone" placeholder="Phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <input class="btn btn-info" type="submit" value="Update">
