@@ -146,7 +146,7 @@ include "../api/include.php";
         <!--==================== Add Student Message ====================-->
         <?php
         if(isset($_SESSION['success_msg'])){
-            echo $_SESSION['success_msg'];
+            echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
             unset($_SESSION['success_msg']);
         }
         
