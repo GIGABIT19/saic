@@ -80,6 +80,20 @@ include "../api/include.php";
                 $('#update_phone').val(data[4]);
             })
 
+            //Delete Student Button On Click Action
+            $('.dlt-btn').on('click', function(){
+                $('#delete-modal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children('td').map(function(){
+                    return $(this).text()
+                }).get();
+
+                //console.log(data);
+                $("#delete_roll").val(data[0]);
+            })
+
         })
     </script>
 </head>
@@ -314,6 +328,27 @@ include "../api/include.php";
         </div>
     </div>
 
+    <!--==================== Delete Student Modal ====================-->
+    <div class="modal fade" id="delete-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to delete?</p>
+                    <form action="../api/students/delete_student.php" method="POST">
+                        <input type="hidden" id="delete_roll" name="delete_roll">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger" id="delete-confirm-btn">Delete</button>
+                    </form>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
