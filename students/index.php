@@ -1,5 +1,5 @@
-<!--==================== Authentication ====================-->
 <?php
+//==================== Authentication ====================//
 session_start();
 if(!isset($_SESSION['username'])){
   header("Location: ../");
@@ -174,7 +174,7 @@ include "../api/include.php";
                     <?php
                     if(isset($_POST['search_button'])){
                         $search_input = $_POST['search_input'];
-                        $SQL = "SELECT * FROM `students` WHERE CONCAT(`roll`,`name`,`phone`,`semester`,`department`) LIKE '%$search_input%'";
+                        $SQL = "SELECT * FROM `students` WHERE CONCAT(`roll`,`name`,`phone`,`session`,`department`) LIKE '%$search_input%'";
                     } else {
                         $SQL = "SELECT * FROM students";
                     }
@@ -192,6 +192,8 @@ include "../api/include.php";
                             print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
                             print "</tr>";
                         }
+                    } else {
+                        echo "<tr><td colspan='6'>No Data Found</td></tr>";
                     }
                     ?>
                     
