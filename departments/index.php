@@ -66,7 +66,7 @@ include_once '../api/include.php';
                                 ?>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="info">
                             <td>Telecommunication</td>
                             <td>
                                 <?php
@@ -86,7 +86,7 @@ include_once '../api/include.php';
                                 ?>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="info">
                             <td>Automobile</td>
                             <td>
                                 <?php
@@ -106,7 +106,7 @@ include_once '../api/include.php';
                                 ?>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="info">
                             <td>Electrical</td>
                             <td>
                                 <?php
@@ -126,7 +126,7 @@ include_once '../api/include.php';
                                 ?>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="info">
                             <td>Garments</td>
                             <td>
                                 <?php
@@ -146,7 +146,7 @@ include_once '../api/include.php';
                                 ?>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="info">
                             <td>Marine</td>
                             <td>
                                 <?php
@@ -166,7 +166,7 @@ include_once '../api/include.php';
                                 ?>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="info">
                             <td>Electronics</td>
                             <td>
                                 <?php
@@ -178,7 +178,7 @@ include_once '../api/include.php';
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
+                        <tr style="font-weight: bold;">
                             <td>Total</td>
                             <td>
                                 <?php
