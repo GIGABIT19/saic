@@ -178,7 +178,7 @@ include_once '../api/include.php';
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr style="font-weight: bold;">
+                        <tr style="font-weight: bold; background: #64B5F6;">
                             <td>Total</td>
                             <td>
                                 <?php
