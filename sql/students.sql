@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 07:16 AM
+-- Generation Time: Jan 01, 2022 at 04:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -31,16 +31,18 @@ CREATE TABLE `students` (
   `roll` int(6) NOT NULL,
   `name` varchar(30) NOT NULL,
   `session` varchar(9) NOT NULL,
-  `phone` varchar(11) NOT NULL,
-  `department` varchar(10) NOT NULL
+  `department` varchar(20) NOT NULL,
+  `phone` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`roll`, `name`, `session`, `phone`, `department`) VALUES
-(145797, 'Shahed Mohammad Hridoy', '', '01848135202', 'Computer');
+INSERT INTO `students` (`roll`, `name`, `session`, `department`, `phone`) VALUES
+(145701, 'Rana Islam', '2018-2019', 'Telecommunication', '01821090999'),
+(145797, 'Shahed Mohammad Hridoy', '2018-2019', 'Computer', '01848135202'),
+(145798, 'Md. Nazim', '2018-2019', 'Computer', '01812457826');
 
 --
 -- Indexes for dumped tables

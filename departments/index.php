@@ -1,3 +1,7 @@
+<?php
+include_once '../api/include.php';
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,17 +57,141 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Computer Technology</td>
-                            <td><!--To Do:--></td>
+                            <td>Computer</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Computer'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Electrial Technology</td>
-                            <td></td>
+                            <td>Telecommunication</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Telecommunication'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Civil</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Civil'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Automobile</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Automobile'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Architecture</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Architecture'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Electrical</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Electrical'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Textile</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Textile'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Garments</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Garments'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mechanical</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Mechanical'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Marine</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Marine'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Shipbuilding</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Shipbuilding'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Electronics</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students` WHERE `department`='Electronics'";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td>
+                                <?php
+                                $sql = "SELECT * FROM `students`";
+                                $result = mysqli_query($mysqli,$sql);
+                                echo mysqli_num_rows($result);
+                                ?>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
-            
+     
     </div>
     
 </body>
