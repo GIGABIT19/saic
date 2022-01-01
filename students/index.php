@@ -290,15 +290,15 @@ include "../api/include.php";
                     <form action="../api/students/update_student.php" method="POST">
                         <div class="form-group">
                             <label for="update_roll">Roll:</label>
-                            <input type="text" name="update_roll" id="update_roll" placeholder="Roll" class="form-control">
+                            <input type="text" name="update_roll" id="update_roll" placeholder="Roll" class="form-control" readonly required>
                         </div>
                         <div class="form-group">
                             <label for="update_name">Name:</label>
-                            <input type="text" name="update_name" id="update_name" placeholder="Name" class="form-control">
+                            <input type="text" name="update_name" id="update_name" placeholder="Name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="update_session">Session:</label>
-                            <input type="text" name="update_session" id="update_session" placeholder="Session" class="form-control">
+                            <input type="text" name="update_session" id="update_session" placeholder="Session" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="update_department">Department:</label>
@@ -319,7 +319,7 @@ include "../api/include.php";
                         </div>
                         <div class="form-group">
                             <label for="update_phone">Phone:</label>
-                            <input type="text" name="update_phone" id="update_phone" placeholder="Phone" class="form-control">
+                            <input type="text" name="update_phone" id="update_phone" placeholder="Phone" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-info" type="submit" value="Update">
