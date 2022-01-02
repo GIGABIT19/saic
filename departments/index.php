@@ -1,4 +1,9 @@
 <?php
+//------------------Authentication--------------------//
+//TO DO:
+
+
+
 include_once '../api/include.php';
 ?>
 
@@ -14,7 +19,8 @@ include_once '../api/include.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Summary</title>
+    
+    <title>Departments</title>
 </head>
 <body>
     <div class="container">
@@ -35,7 +41,7 @@ include_once '../api/include.php';
                             <li><a href="../dashboard">Dashboard</a></li>
                             <li><a href="../teachers">Teachers</a></li>
                             <li><a href="../students">Students</a></li>
-                            <li class="active"><a href="../departments">Summary</a></li>
+                            <li class="active"><a href="../departments">Departments</a></li>
                             <li><a href="../users">Users</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -45,6 +51,10 @@ include_once '../api/include.php';
                 </div>
             </nav>
 
+            <!--==================== Add Departments ====================-->
+            <div class="col-md-3">
+                <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Department</button>
+            </div>
 
             <!--DATA TABLE-->
             <div class="col-md-12">
@@ -192,6 +202,16 @@ include_once '../api/include.php';
                 </table>
             </div>
      
+    </div>
+
+    <!--==================== Add Department Modal ====================-->
+    <div class="modal fade" id="add-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
     </div>
     
 </body>
