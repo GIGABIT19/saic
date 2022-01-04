@@ -224,7 +224,7 @@ include_once '../api/include.php';
                     <form action="../api/departments/add_department.php" method="POST">
                         <div class="form-group">
                             <label for="department">Department</label>
-                            <input id="department" type="text" class="form-control" placeholder="Department" required>
+                            <input id="department" type="text" class="form-control" placeholder="Department" required name="department">
                         </div>
                         <input type="submit" value="Add Department" class="btn btn-primary">
                     </form>
