@@ -1,5 +1,6 @@
 <?php
 //------------------Authentication--------------------//
+session_start();
 //TO DO:
 
 
@@ -59,12 +60,31 @@ include_once '../api/include.php';
                 </div>
             </nav>
 
-            <!--==================== Add Departments ====================-->
+            <!--==================== Add Department ====================-->
             <div class="col-md-3">
                 <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add Department</button>
             </div>
+            <!--==================== Add Department Message ====================-->
+            <?php
+            if(isset($_SESSION['success_msg'])){
+                echo '<div class=\'col-md-12 alert alert-success\' style=\'margin-top: 10px;\'';
+                echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
+                echo '</div>';
 
-            <!--DATA TABLE-->
+                unset($_SESSION['success_msg']);
+            }
+            
+            if(isset($_SESSION['error_msg'])){
+                echo '<div class=\'col-md-12 alert alert-danger\' style=\'margin-top: 10px;\'';
+                echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
+                echo '</div>';
+
+                unset($_SESSION['error_msg']);
+            }
+            
+            ?>
+
+            <!--==================== DATA TABLE ====================-->
             <div class="col-md-12">
                 <table class="table">
                     <thead>
