@@ -21,6 +21,14 @@ include_once '../api/include.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <title>Departments</title>
+
+    <script>
+        $(document).ready(function(){
+            $(".add-btn").on('click',function(){
+                $("#add-modal").modal('show');
+            })
+        })
+    </script>
 </head>
 <body>
     <div class="container">
@@ -208,8 +216,19 @@ include_once '../api/include.php';
     <div class="modal fade" id="add-modal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header"></div>
-                <div class="modal-body"></div>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Department</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="../api/departments/add_department.php" method="POST">
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input id="department" type="text" class="form-control" placeholder="Department" required>
+                        </div>
+                        <input type="submit" value="Add Department" class="btn btn-primary">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
