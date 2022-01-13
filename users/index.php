@@ -81,8 +81,21 @@
                                 print "<tr>";
                                 print "<td>".$row['id']."</td>";
                                 print "<td>".$row['username']."</td>";
-                                print "<td>".$row['role']."</td>";
-                                print "<td>".$row['active']."</td>";
+                                
+                                if($row['role']==1){
+                                    print "<td>Admin</td>";
+                                } else {
+                                    print "<td>".$row['role']."</td>";
+                                }
+                                
+                                if($row['active']){
+                                    print "<td>Active</td>";
+
+                                } else {
+                                    print "<td>Inactive</td>";
+                                }
+
+                                
                                 print "<td>".$row['created_at']."</td>";
                                 print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
                                 print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
@@ -111,18 +124,23 @@
                     <h4 class="modal-title">Add User</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="" method="POST">
                         <div class="form-group">
+                            <label for="username">Username:</label>
                             <input type="text" placeholder="Username" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="password">Password:</label>
                             <input type="password" placeholder="Password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Role" class="form-control">
+                            <label for="">Role:</label>
+                            <input type="radio" checked> Admin
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Status" class="form-control">
+                            <label for="">Status:</label>
+                            <input type="radio" name="status" checked> Active
+                            <input type="radio" name="status"> Inactive
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Add User" class="btn btn-primary">
