@@ -10,6 +10,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $(".add-btn").on('click',function(){
+                    $("#add-modal").modal("show")
+                })
+            })
+        </script>
         
         <title>Users</title>
     </head>
@@ -93,5 +101,38 @@
                 </div>
             </div>
     </div>
+
+    <!--==================== Add User Modal ====================-->
+    <div class="modal fade" id="add-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add User</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" placeholder="Username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Role" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Status" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Add User" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
