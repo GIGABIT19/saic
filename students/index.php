@@ -116,7 +116,7 @@ include "../api/include.php";
                         <li><a href="../dashboard">Dashboard</a></li>
                         <li><a href="../teachers">Teachers</a></li>
                         <li class="active"><a href="../students">Students</a></li>
-                        <li><a href="../departments">Summary</a></li>
+                        <li><a href="../departments">Departments</a></li>
                         <li><a href="../users">Users</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
