@@ -93,6 +93,16 @@ include_once '../api/include.php';
                             <th>Total Student</th>
                         </tr>
                     </thead>
+                    <?php
+                    
+                    $SQL = "SELECT * FROM `departments`";
+                    $result = mysqli_query($mysqli,$SQL);
+                    if($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            print "<tr><td>".$row['department']."</td></tr>";
+                        }
+                    }
+                    ?>
                     <tbody>
                         <tr>
                             <td>Computer</td>
