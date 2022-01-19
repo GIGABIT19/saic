@@ -227,18 +227,17 @@ include "../api/include.php";
                         <div class="form-group">
                             <label for="department">Department:</label>
                             <select id="department" name="department" class="form-control">
-                                <option value="Computer">Computer</option>
-                                <option value="Telecommunication">Telecommunication</option>
-                                <option value="Civil">Civil</option>
-                                <option value="Automobile">Automobile</option>
-                                <option value="Architecture">Architecture</option>
-                                <option value="Electrical">Electrical</option>
-                                <option value="Textile">Textile</option>
-                                <option value="Garments">Garments</option>
-                                <option value="Mechanical">Mechanical</option>
-                                <option value="Marine">Marine</option>
-                                <option value="Shipbuilding">Shipbuilding</option>
-                                <option value="Electronics">Electronics</option>
+                                <?php
+                                $depsql = "SELECT * FROM `departments`";
+                                $result = mysqli_query($mysqli,$depsql);
+                                if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()){
+                                        ?>
+                                        <option value="<?php echo $row['department']?>"><?php echo $row['department']?></option>
+                                        <?php
+                                        } //end while loop
+                                    } //end if condition
+                                ?>
                             </select>
                         </div>
                         <div class="form-group">
@@ -303,18 +302,17 @@ include "../api/include.php";
                         <div class="form-group">
                             <label for="update_department">Department:</label>
                             <select id="update_department" name="update_department" class="form-control">
-                                <option value="Computer">Computer</option>
-                                <option value="Telecommunication">Telecommunication</option>
-                                <option value="Civil">Civil</option>
-                                <option value="Automobile">Automobile</option>
-                                <option value="Architecture">Architecture</option>
-                                <option value="Electrical">Electrical</option>
-                                <option value="Textile">Textile</option>
-                                <option value="Garments">Garments</option>
-                                <option value="Mechanical">Mechanical</option>
-                                <option value="Marine">Marine</option>
-                                <option value="Shipbuilding">Shipbuilding</option>
-                                <option value="Electronics">Electronics</option>
+                                <?php
+                                $depsql = "SELECT * FROM `departments`";
+                                $result = mysqli_query($mysqli,$depsql);
+                                if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()){
+                                        ?>
+                                        <option value="<?php echo $row['department']?>"><?php echo $row['department']?></option>
+                                        <?php
+                                        } //end while loop
+                                    } //end if condition
+                                ?>
                             </select>
                         </div>
                         <div class="form-group">
