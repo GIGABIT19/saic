@@ -67,11 +67,15 @@ include_once '../api/include.php';
             <!--==================== Add Department Message ====================-->
             <?php
             if(isset($_SESSION['success_msg'])){
-                echo '<div class=\'col-md-12 alert alert-success\' style=\'margin-top: 10px;\'';
-                echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
-                echo '</div>';
-
-                unset($_SESSION['success_msg']);
+                ?>
+                <div class="col-md-12 alert alert-success" style="margin-top: 10px;">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <?php
+                    echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
+                    unset($_SESSION['success_msg']);
+                    ?>
+                </div>
+                <?php
             }
             
             if(isset($_SESSION['error_msg'])){
