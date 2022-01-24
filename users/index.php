@@ -89,10 +89,12 @@
                                 }
                                 
                                 if($row['active']){
-                                    print "<td>Active</td>";
+                                    print "<td><span style='color: green;'>● </span>";
+                                    print "Active</td>";
 
                                 } else {
-                                    print "<td>Inactive</td>";
+                                    print"<td><span style='color: red;'>● </span>";
+                                    print "Inactive</td>";
                                 }
 
                                 
