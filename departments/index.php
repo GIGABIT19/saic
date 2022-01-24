@@ -79,13 +79,16 @@ include_once '../api/include.php';
             }
             
             if(isset($_SESSION['error_msg'])){
-                echo '<div class=\'col-md-12 alert alert-danger\' style=\'margin-top: 10px;\'';
-                echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
-                echo '</div>';
-
-                unset($_SESSION['error_msg']);
+                ?>
+                <div class="col-md-12 alert alert-danger" style="margin-top: 10px;">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <?php
+                    echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
+                    unset($_SESSION['error_msg']);
+                    ?>
+                </div>
+                <?php                
             }
-            
             ?>
 
             <!--==================== DATA TABLE ====================-->
