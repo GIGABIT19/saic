@@ -98,6 +98,7 @@ include_once '../api/include.php';
                         <tr>
                             <th>Department</th>
                             <th>Total Student</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -112,7 +113,7 @@ include_once '../api/include.php';
                             $count_sql = "SELECT * FROM `students` WHERE `department`='$dep'";
                             $count_result = mysqli_query($mysqli,$count_sql);
                             echo mysqli_num_rows($count_result);
-                            print "</td></tr>";
+                            print "</td><td></td></tr>";
                         }
                     }
                     ?>
@@ -127,6 +128,7 @@ include_once '../api/include.php';
                                 echo mysqli_num_rows($result);
                                 ?>
                             </td>
+                            <td></td>
                         </tr>
                     </tfoot>
                 </table>
