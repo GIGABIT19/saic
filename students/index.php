@@ -165,6 +165,7 @@ include "../api/include.php";
                         <th>Name</th>
                         <th>Session</th>
                         <th>Department</th>
+                        <th>Birthdate</th>
                         <th>Phone</th>
                         <th>Action</th>
                     </tr>
@@ -186,6 +187,7 @@ include "../api/include.php";
                             print "<td>".$row['name']."</td>";
                             print "<td>".$row['session']."</td>";
                             print "<td>".$row['department']."</td>";
+                            print "<td>".$row['birthdate']."</td>";
                             print "<td>".$row['phone']."</td>";
                             print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
                             print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
@@ -239,6 +241,10 @@ include "../api/include.php";
                                     } //end if condition
                                 ?>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Birthdate</label>
+                            <input type="date" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
