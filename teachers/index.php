@@ -143,15 +143,29 @@ include "../api/include.php";
     <!--==================== Add Teacher Message ====================-->
     <?php
     if(isset($_SESSION['success_msg'])){
-      echo $_SESSION['success_msg'];
-      unset($_SESSION['success_msg']);
+      ?>
+      <div class="col-md-12 alert alert-success hidden-print">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?php
+        echo $_SESSION['success_msg'];
+        unset($_SESSION['success_msg']);
+        ?>
+      </div>
+      <?php
     }
     
     if(isset($_SESSION['error_msg'])){
-      echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
-      unset($_SESSION['error_msg']);
+      ?>
+      <div class="col-md-12 alert alert-danger hidden-print">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?php
+        echo $_SESSION['error_msg'];
+        unset($_SESSION['error_msg']);
+        ?>
+      </div>
+      <?php
     }
-    ?>
+      ?>
 
     <!--==================== Teachers Data Table ====================-->
     <div class="col-md-12 hidden-print">
