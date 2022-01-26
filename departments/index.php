@@ -113,7 +113,10 @@ include_once '../api/include.php';
                             $count_sql = "SELECT * FROM `students` WHERE `department`='$dep'";
                             $count_result = mysqli_query($mysqli,$count_sql);
                             echo mysqli_num_rows($count_result);
-                            print "</td><td></td></tr>";
+                            print "</td>";
+                            print "<td><button class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></button> ";
+                            print "<button class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></button></td>";
+                            print "</tr>";
                         }
                     }
                     ?>
