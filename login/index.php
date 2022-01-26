@@ -27,7 +27,7 @@ if(isset($_SESSION['username'])){
         <div class="panel panel-default col-md-4 col-md-offset-4">
             <div class="panel-body">
                 <form action="../api/login.php" method="POST"  style="text-align: center;">
-                    <img src="logo.png" alt="Logo" width="100px" style="margin-bottom: 20px;">
+                    <img src="../img/logo.png" alt="Logo" width="100px" style="margin-bottom: 20px;">
                     <div class="form-group">
                         <input type="text" placeholder="Username" class="form-control" name="username" required autofocus>
                     </div>
