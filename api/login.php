@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 header("location: ../dashboard");
             } else {
                 $_SESSION['error_message'] = "Your account is inactive";
-                header("location: ../");
+                header("location: ../login/");
             }
             
 
@@ -46,17 +46,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
         } else {
             $_SESSION['error_message'] = "Username or Password Error!";
-            header('location: ../');
+            header('location: ../login/');
         }
         
       } else {
           $_SESSION['error_message'] = $mysqli -> error;
-          header('location: ../');
+          header('location: ../login/');
       }
 
     
 
 } else {
-    header("location: ..");
+    header("location: ../login/");
 }
 
