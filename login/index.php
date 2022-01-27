@@ -40,18 +40,18 @@ if(isset($_SESSION['username'])){
         </div>
 
 
-        <!--==================== Error Message Panel ====================-->
+        <!--==================== Error Message ====================-->
         <?php
         if(isset($_SESSION['error_message'])){
             ?>
             
-            <div class="panel panel-danger col-md-4 col-md-offset-4">
-                <div class="panel-body">
+            <div class="alert alert-danger col-md-4 col-md-offset-4">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>                
                     <?php
                     echo $_SESSION['error_message'];
                     session_destroy();
                     ?>
-                </div>
+                
             </div>
             
             <?php
