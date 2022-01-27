@@ -13,19 +13,29 @@ if(!isset($_SESSION['username'])){
         $roll = $_POST['roll'];
         $name = $_POST['name'];
         $session = $_POST['session'];
-        $phone = $_POST['phone'];
-        $semester = $_POST['semester'];
         $department = $_POST['department'];
+        $birthdate = $_POST['birthdate'];
+        $phone = $_POST['phone'];
         
         
-        $SQL = "INSERT INTO `students` (`roll`, `name`, `session`, `phone`, `department`) VALUES
-        ('$roll', '$name', '$session', '$phone', '$department')";
+
+        
+        
+        $SQL = "INSERT INTO `students` (`roll`, `name`, `session`, `department`, `birthdate`, `phone`) VALUES
+        ('$roll', '$name', '$session', '$department', '$birthdate', '$phone')";
 
         if($mysqli->query($SQL) == TRUE){
             $_SESSION['success_msg'] = "Student added successfully.";
             header("location: ../../students");
         } else {
             $_SESSION['error_msg'] = $mysqli->error;
+            /*
+            if (mysql_errno() == 1022) {
+                die("Username already exists");
+            } else {
+                die(mysql_error());
+            }
+            */
             header("location: ../../students");
         }
     }

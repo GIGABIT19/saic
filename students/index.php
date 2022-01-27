@@ -54,8 +54,8 @@ include "../api/include.php";
                 $('#view_name').text(data[1]);
                 $('#view_session').text(data[2]);
                 $('#view_department').text(data[3]);
-                $('#view_phone').text(data[4]);
-                
+                $('#view_birthdate').text(data[4]);
+                $('#view_phone').text(data[5]);
                 
                 $('#view_print_button').on('click',function(){
                     window.print();
@@ -146,8 +146,15 @@ include "../api/include.php";
         <!--==================== Add Student Message ====================-->
         <?php
         if(isset($_SESSION['success_msg'])){
-            echo '<span class="hidden-print">'.$_SESSION['success_msg'].'</span>';
-            unset($_SESSION['success_msg']);
+        ?>
+            <div class="col-md-12 alert alert-success hidden-print">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?php
+                echo $_SESSION['success_msg'];
+                unset($_SESSION['success_msg']);
+                ?>
+            </div>
+        <?php
         }
         
         if(isset($_SESSION['error_msg'])){
@@ -187,7 +194,7 @@ include "../api/include.php";
                             print "<td>".$row['name']."</td>";
                             print "<td>".$row['session']."</td>";
                             print "<td>".$row['department']."</td>";
-                            print "<td>".$row['birthdate']."</td>";
+                            print "<td>".date_format(date_create($row['birthdate']),"d-m-Y")."</td>";
                             print "<td>".$row['phone']."</td>";
                             print "<td><button class='btn btn-primary view-btn'><span class='glyphicon glyphicon-eye-open'></span></button> ";
                             print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
@@ -243,7 +250,7 @@ include "../api/include.php";
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="birthdate">Birthdate</label>
+                            <label for="birthdate">Birthdate:</label>
                             <input type="date" class="form-control" name="birthdate" id="birthdate" required>
                         </div>
                         <div class="form-group">
@@ -270,10 +277,11 @@ include "../api/include.php";
                 <div class="modal-body view_data">
                     <table>
                         <tr><td style="padding: 5px;"><label for="view_roll">Roll:</label></td><td><span id="view_roll"></span></td></tr>
-                        <tr><td style="padding: 5px;"><label for="view_name">Name:</td><td><span id="view_name"></span></td></tr>
-                        <tr><td style="padding: 5px;"><label for="view_session">Session:</td><td><span id="view_session"></span></td></tr>
-                        <tr><td style="padding: 5px;"><label for="view_department">Department:</td><td><span id="view_department"></span></td></tr>
-                        <tr><td style="padding: 5px;"><label for="view_phone">Phone:</td><td><span id="view_phone"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_name">Name:</label></td><td><span id="view_name"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_session">Session:</label></td><td><span id="view_session"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_department">Department:</label></td><td><span id="view_department"></span></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_birthdate">Birthdate:</label></td><td><span id="view_birthdate"></td></tr>
+                        <tr><td style="padding: 5px;"><label for="view_phone">Phone:</label></td><td><span id="view_phone"></span></td></tr>
                     </table>
                 </div>
                 <div class="modal-footer hidden-print">
