@@ -244,7 +244,7 @@ include "../api/include.php";
                         </div>
                         <div class="form-group">
                             <label for="birthdate">Birthdate</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" name="birthdate" id="birthdate" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
