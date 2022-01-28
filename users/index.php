@@ -58,6 +58,18 @@ session_start();
                 <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add User</button>
             </div>
 
+            <!--==================== Search Box ====================-->
+            <div class="col-md-offset-6 col-md-3 hidden-print">
+                <form action="" method="POST">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search_input" required>
+                        <div class="input-group-btn">
+                            <input class="btn btn-info" type="submit" value="Search" name="search_button">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             <!--==================== Add User Message ====================-->
             <?php
             if(isset($_SESSION['success_msg'])){
