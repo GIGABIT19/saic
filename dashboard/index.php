@@ -20,7 +20,7 @@ if(!isset($_SESSION['username'])){
     <body>
         <div class="container">
             
-            <!--Nav-->
+            <!--==================== Nav ====================-->
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
 
@@ -47,15 +47,17 @@ if(!isset($_SESSION['username'])){
                 </div>
             </nav>
             
+            <!--==================== Welcome ====================-->
             <div class="col-md-12">
-                <div class="panel panel-success">
+                <div class="panel panel-info">
                     <div class="panel-heading">Welcome</div>
                     <div class="panel-body"><h1><?php echo 'Welcome '.ucfirst($_SESSION['username']); ?> <br></h1></div>
                 </div>
             </div>
             
-            <div class="col-md-4">
-                <div class="panel panel-success">
+            <!--==================== Total Users ====================-->
+            <div class="col-md-3">
+                <div class="panel panel-info">
                     <div class="panel-heading">Total Users</div>
                     <div class="panel-body"><h1>
                     <?php
@@ -68,8 +70,9 @@ if(!isset($_SESSION['username'])){
                 </div>
             </div>
             
-            <div class="col-md-4">
-                <div class="panel panel-success">
+            <!--==================== Total Teachers ====================-->
+            <div class="col-md-3">
+                <div class="panel panel-info">
                     <div class="panel-heading">Total Teachers</div>
                     <div class="panel-body"><h1>
                         <?php
@@ -82,13 +85,29 @@ if(!isset($_SESSION['username'])){
                 </div>
             </div>
             
-            <div class="col-md-4">
-                <div class="panel panel-success">
+            <!--==================== Total Students ====================-->
+            <div class="col-md-3">
+                <div class="panel panel-info">
                     <div class="panel-heading">Total Students</div>
                     <div class="panel-body"><h1>
                     <?php
                         include '../api/include.php';
                         $sql = "SELECT * FROM `students`;";
+                        $result = mysqli_query($mysqli,$sql);
+                        echo mysqli_num_rows($result);
+                        ?>
+                    </h1></div>
+                </div>
+            </div>
+
+            <!--==================== Total Departments ====================-->
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Total Departments</div>
+                    <div class="panel-body"><h1>
+                    <?php
+                        include '../api/include.php';
+                        $sql = "SELECT * FROM `departments`;";
                         $result = mysqli_query($mysqli,$sql);
                         echo mysqli_num_rows($result);
                         ?>
