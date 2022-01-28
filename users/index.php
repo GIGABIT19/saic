@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -53,6 +57,7 @@
             <div class="col-md-3">
                 <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add User</button>
             </div>
+
 
             <!--==================== Users Data Load ====================-->
             <div class="col-md-12 hidden-print">
@@ -126,23 +131,23 @@
                     <h4 class="modal-title">Add User</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="POST">
+                    <form action="../api/users/add_user.php" method="POST">
                         <div class="form-group">
                             <label for="username">Username:</label>
-                            <input type="text" placeholder="Username" class="form-control">
+                            <input id="username" type="text" placeholder="Username" class="form-control" name="username" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" placeholder="Password" class="form-control">
+                            <input id="password" type="password" placeholder="Password" class="form-control" name="password" required>
                         </div>
                         <div class="form-group">
-                            <label for="">Role:</label>
-                            <input type="radio" checked> Admin
+                            <label for="role">Role:</label>
+                            <input id="role" type="radio" checked name="role" required value="Admin"> Admin
                         </div>
                         <div class="form-group">
                             <label for="">Status:</label>
-                            <input type="radio" name="status" checked> Active
-                            <input type="radio" name="status"> Inactive
+                            <input type="radio" name="status" value="1" checked> Active
+                            <input type="radio" name="status" value="0"> Inactive
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Add User" class="btn btn-primary">

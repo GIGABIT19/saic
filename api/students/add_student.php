@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../include.php';
 
 if(!isset($_SESSION['username'])){
     $_SESSION['error_message'] = 'You have to login first.';
@@ -16,11 +15,8 @@ if(!isset($_SESSION['username'])){
         $department = $_POST['department'];
         $birthdate = $_POST['birthdate'];
         $phone = $_POST['phone'];
-        
-        
 
-        
-        
+        include '../include.php';
         $SQL = "INSERT INTO `students` (`roll`, `name`, `session`, `department`, `birthdate`, `phone`) VALUES
         ('$roll', '$name', '$session', '$department', '$birthdate', '$phone')";
 
