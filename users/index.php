@@ -142,7 +142,7 @@ session_start();
                         </div>
                         <div class="form-group">
                             <label for="role">Role:</label>
-                            <input id="role" type="radio" checked name="role" required value="Admin"> Admin
+                            <input id="role" type="radio" checked name="role" required value="1"> Admin
                         </div>
                         <div class="form-group">
                             <label for="">Status:</label>
