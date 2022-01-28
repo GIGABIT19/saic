@@ -158,8 +158,16 @@ include "../api/include.php";
         }
         
         if(isset($_SESSION['error_msg'])){
-            echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
-            unset($_SESSION['error_msg']);
+        ?>
+            <div class="col-md-12 alert alert-danger hidden-print">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?php
+                echo '<span class="hidden-print">'.$_SESSION['error_msg'].'</span>';
+                unset($_SESSION['error_msg']);
+                ?>
+            </div>
+        <?php
+            
         }
         ?>
         
