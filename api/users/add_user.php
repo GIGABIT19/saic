@@ -18,29 +18,14 @@ if(!isset($_SESSION['username'])){
     
     $SQL = "INSERT INTO `users` (`id`, `username`, `password`, `role`, `active`, `created_at`) VALUES
                                 (NULL, \'$username\', \'$password\', \'$role\', \'$active\', current_timestamp());";
-
-
-
-
+                                
+    if ($mysqli->query($SQL) === TRUE) {
+      $_SESSION['success_msg'] = "User added successfully.";
+      header("location: ../../users");
+    } else {
+      //failed message
+      $_SESSION['error_msg'] = $mysqli->error;
+      header("location: ../../users");
+    }
   }
 }
-
-/*
-
-
-//Data Receiving Check
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-    
-    if ($mysqli->query($SQL) === TRUE) {
-        $_SESSION['success_msg'] = "User added successfully.";
-        header("location: ../../users");
-      } else {
-        //failed message
-        $_SESSION['error_msg'] = $mysqli->error;
-        header("location: ../../users");
-      }
-
-} else {
-    header("Location: ../../users");
-}
-*/
