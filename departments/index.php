@@ -54,6 +54,7 @@ include_once '../api/include.php';
                             <li><a href="../users">Users</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../profile/"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                             <li><a href="../api/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         </ul>
                     </div>
