@@ -58,6 +58,33 @@ session_start();
                 <button class="btn btn-primary add-btn hidden-print"><span class="glyphicon glyphicon-plus"></span> Add User</button>
             </div>
 
+            <!--==================== Add User Message ====================-->
+            <?php
+            if(isset($_SESSION['success_msg'])){
+            ?>
+            <div class="col-md-12 alert alert-success hidden-print">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?php
+                echo $_SESSION['success_msg'];
+                unset($_SESSION['success_msg']);
+                ?>
+            </div>
+            <?php
+            }
+            
+            if(isset($_SESSION['error_msg'])){
+            ?>
+            <div class="col-md-12 alert alert-danger hidden-print">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?php
+                echo $_SESSION['error_msg'];
+                unset($_SESSION['error_msg']);
+                ?>
+            </div>
+            <?php
+            }
+            ?>
+
 
             <!--==================== Users Data Load ====================-->
             <div class="col-md-12 hidden-print">
