@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])){
     header('location: ../../users/');
   } else {
 
-    $username =$_POST['username'];
+    $username =strtolower($_POST['username']);
     $password =md5($_POST['password']);
     $role =$_POST['role'];
     $active =$_POST['status'];
