@@ -11,8 +11,9 @@ if(!isset($_SESSION['username'])){
     } else {        
         
         $department = $_POST['department'];
+        $seat_capacity = $_POST['seat_capacity'];
         
-        $SQL = "INSERT INTO `departments` (`id`, `department`) VALUES (NULL, '$department')";
+        $SQL = "INSERT INTO `departments` (`id`, `department`, `seat_capacity`) VALUES (NULL, '$department', '$seat_capacity')";
 
         if($mysqli->query($SQL) == TRUE){
             $_SESSION['success_msg'] = "Department added successfully.";

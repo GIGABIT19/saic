@@ -97,6 +97,7 @@ include_once '../api/include.php';
                     <thead>
                         <tr>
                             <th>Department</th>
+                            <th>Seat Capacity</th>
                             <th>Total Student</th>
                             <th>Action</th>
                         </tr>
@@ -109,6 +110,7 @@ include_once '../api/include.php';
                         while($row = $result->fetch_assoc()){
                             $dep = $row['department'];
                             print "<tr><td>".$dep."</td>";
+                            print "<td>".$row['seat_capacity']."</td>";
                             print "<td>";
                             $count_sql = "SELECT * FROM `students` WHERE `department`='$dep'";
                             $count_result = mysqli_query($mysqli,$count_sql);
@@ -122,8 +124,18 @@ include_once '../api/include.php';
                     ?>
                     </tbody>
                     <tfoot>
-                        <tr style="font-weight: bold; background: #64B5F6;">
+                        <tr style="font-weight: bold; background: #64B5F6; color: white;">
                             <td>Total</td>
+                            <td>
+                                <?php
+                                $seat_sql = "SELECT SUM(`seat_capacity`) FROM `departments`";
+                                $seat_result = mysqli_query($mysqli,$seat_sql);
+                                while($row = mysqli_fetch_array($seat_result)){
+                                    echo $row['SUM(`seat_capacity`)'];
+                                    
+                                }
+                                ?>
+                            </td>
                             <td>
                                 <?php
                                 $sql = "SELECT * FROM `students`";
@@ -150,9 +162,14 @@ include_once '../api/include.php';
                 <div class="modal-body">
                     <form action="../api/departments/add_department.php" method="POST">
                         <div class="form-group">
-                            <label for="department">Department</label>
-                            <input id="department" type="text" class="form-control" placeholder="Department" required name="department">
+                            <label for="department">Department:</label>
+                            <input id="department" type="text" class="form-control" placeholder="Department" name="department" required>
                         </div>
+                        <div class="form-group">
+                            <label for="seat_capacity">Seat Capacity:</label>
+                            <input type="number" name="seat_capacity" id="seat_capacity" placeholder="Seat Capacity" class="form-control" required>
+                        </div>
+
                         <input type="submit" value="Add Department" class="btn btn-primary">
                     </form>
                 </div>
