@@ -50,4 +50,7 @@ Shahed Mohammad Hridoy
 
 This project is licensed under the [Shahed Mohammad Hridoy] License - see the LICENSE.md file for details
 
-## Acknowledgments
+## Thanks to
+...
+Saic Institute of Management & Technology
+...
