@@ -5,19 +5,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $username = $_POST['username'];
     $password = md5($_POST['password']);
 
-    //DATABASE
-    $SERVER = "localhost";
-    $USER = "root";
-    $PASS = "";
-    $DB = "saic";
-
-    //Connect Database
-    $mysqli = new mysqli($SERVER, $USER, $PASS, $DB);
+    include_once 'include.php';
 
     //Check Connection
     if($mysqli->connect_errno){
         $_SESSION['error_message'] = $mysqli->connect_error;
-        header('location: ../');
+        header('location: ../login/');
         exit();
     }
 
