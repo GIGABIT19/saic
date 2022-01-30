@@ -47,13 +47,13 @@
                 <div class="panel-body">
                     <form action="" method="post">
                         <div class="form-group">
-                            <input type="password" name="" id="" placeholder="Current Password" class="form-control">
+                            <input type="password" name="current_password" id="" placeholder="Current Password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="" id="" placeholder="New Password" class="form-control">
+                            <input type="password" name="new_password" id="" placeholder="New Password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="" id="" placeholder="Confirm New Password" class="form-control">
+                            <input type="password" name="confirm_password" id="" placeholder="Confirm New Password" class="form-control">
                         </div>
                         <div class="form-group">
                             <input class="btn btn-primary" type="submit" name="" id="">
