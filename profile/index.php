@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,7 +64,37 @@
                     </form>
                 </div>
             </div>
+        
+
+        <!--==================== Change Password Message ====================-->
+        <?php
+        if(isset($_SESSION['success_msg'])){
+        ?>
+        <div class="alert alert-success hidden-print">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <?php
+            echo $_SESSION['success_msg'];
+            unset($_SESSION['success_msg']);
+            ?>
         </div>
+        <?php
+        }
+    
+        if(isset($_SESSION['error_msg'])){
+        ?>
+        <div class="alert alert-danger hidden-print">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <?php
+            echo $_SESSION['error_msg'];
+            unset($_SESSION['error_msg']);
+            ?>
+        </div>
+        <?php
+        }
+        ?>
+      </div>
+
+
     </div>
 </body>
 </html>
