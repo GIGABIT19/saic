@@ -22,8 +22,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         
         if($result->num_rows==1){
 
-            // $active = 
-
             $row = $result->fetch_assoc();
             
             if($row['active']==1){

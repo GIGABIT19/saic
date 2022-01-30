@@ -45,7 +45,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Change Password</div>
                 <div class="panel-body">
-                    <form action="" method="post">
+                    <form action="../api/change_password.php" method="post">
                         <div class="form-group">
                             <input type="password" name="current_password" id="" placeholder="Current Password" class="form-control">
                         </div>
