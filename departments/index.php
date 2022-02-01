@@ -20,6 +20,20 @@ include_once '../api/include.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.edit-btn').on('click', function(){
+                //to do:
+                alert("Edit button clicked!");
+            })
+
+            $('.dlt-btn').on('click', function(){
+                //to do:
+                alert("Delete button clicked!");
+            })
+        })
+    </script>
     
     <title>Departments</title>
 
@@ -115,9 +129,9 @@ include_once '../api/include.php';
                             $count_sql = "SELECT * FROM `students` WHERE `department`='$dep'";
                             $count_result = mysqli_query($mysqli,$count_sql);
                             echo mysqli_num_rows($count_result);
-                            print "</td>";
-                            print "<td><button class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></button> ";
-                            print "<button class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></button></td>";
+                            print "</td><td>";
+                            print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
+                            print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
                             print "</tr>";
                         }
                     }
