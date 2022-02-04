@@ -129,6 +129,8 @@ session_start();
                                 
                                 if($row['role']==1){
                                     print "<td>Admin</td>";
+                                } else if($row['role']==2){
+                                    print "<td>Teacher</td>";
                                 } else {
                                     print "<td>".$row['role']."</td>";
                                 }
