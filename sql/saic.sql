@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 09:29 PM
+-- Generation Time: Feb 04, 2022 at 06:55 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -30,23 +30,45 @@ SET time_zone = "+00:00";
 CREATE TABLE `departments` (
   `id` int(11) NOT NULL,
   `department` varchar(30) NOT NULL,
-  `seat_capacity` int(11) NOT NULL
+  `seat_capacity` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `departments`
 --
 
-INSERT INTO `departments` (`id`, `department`, `seat_capacity`) VALUES
-(1, 'Computer', 100),
-(2, 'Civil', 80),
-(3, 'Automobile', 50),
-(4, 'Electrical', 30),
-(5, 'Architecture', 50),
-(6, 'Febric', 50),
-(7, 'Garments', 40),
-(8, 'GDPM', 50),
-(9, 'Yarn', 10);
+INSERT INTO `departments` (`id`, `department`, `seat_capacity`, `created_at`) VALUES
+(1, 'Computer', 100, '2022-02-04 05:53:56'),
+(2, 'Civil', 80, '2022-02-04 05:53:56'),
+(3, 'Automobile', 50, '2022-02-04 05:53:56'),
+(4, 'Electrical', 30, '2022-02-04 05:53:56'),
+(5, 'Architecture', 50, '2022-02-04 05:53:56'),
+(6, 'Febric', 50, '2022-02-04 05:53:56'),
+(7, 'Garments', 40, '2022-02-04 05:53:56'),
+(8, 'GDPM', 50, '2022-02-04 05:53:56'),
+(9, 'Yarn', 10, '2022-02-04 05:53:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `role` varchar(10) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `role`, `created_at`) VALUES
+(1, 'Admin', '2022-02-04 11:51:25'),
+(2, 'Teacher', '2022-02-04 11:51:25'),
+(3, 'Student', '2022-02-04 11:51:53');
 
 -- --------------------------------------------------------
 
@@ -60,26 +82,27 @@ CREATE TABLE `students` (
   `session` varchar(9) NOT NULL,
   `department` varchar(20) NOT NULL,
   `birthdate` date NOT NULL DEFAULT current_timestamp(),
-  `phone` varchar(11) NOT NULL
+  `phone` varchar(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`roll`, `name`, `session`, `department`, `birthdate`, `phone`) VALUES
-(141615, 'Rina Islam', '2018-2019', 'Computer', '2022-01-29', '29-01-2022'),
-(145701, 'Rana Islam', '2018-2019', 'Telecommunication', '2001-01-27', '01821090999'),
-(145702, 'Rabbi Islam', '2018-2019', 'Febric', '2010-12-24', '01821899122'),
-(145703, 'Ashok Kumar Das', '2019-2020', 'Garments', '2019-12-11', '01821899128'),
-(145704, 'Habiba', '2020-2021', 'Computer', '1999-10-12', '01812345676'),
-(145705, 'Sabbir', '2020-2021', 'Garments', '2001-01-08', '01882211222'),
-(145706, 'Riki', '2018-2019', 'GDPM', '2022-01-21', '01812332212'),
-(145733, 'Himel', '2018-2019', 'Febric', '2022-01-27', '01812345622'),
-(145787, 'Mukta', '2018-2019', 'Computer', '2022-01-27', '01811223355'),
-(145789, 'Ashok Kumar Das', '2018-2019', 'Computer', '2001-01-06', '01821221122'),
-(145797, 'Shahed Mohammad Hridoy', '2018-2019', 'Computer', '2022-01-27', '01848135202'),
-(145798, 'Md. Nazim', '2018-2019', 'Telecommunication', '2022-01-27', '01812457826');
+INSERT INTO `students` (`roll`, `name`, `session`, `department`, `birthdate`, `phone`, `created_at`) VALUES
+(141615, 'Rina Islam', '2018-2019', 'Computer', '2022-01-29', '29-01-2022', '2022-02-04 11:53:26'),
+(145701, 'Rana Islam', '2018-2019', 'Telecommunication', '2001-01-27', '01821090999', '2022-02-04 11:53:26'),
+(145702, 'Rabbi Islam', '2018-2019', 'Febric', '2010-12-24', '01821899122', '2022-02-04 11:53:26'),
+(145703, 'Ashok Kumar Das', '2019-2020', 'Garments', '2019-12-11', '01821899128', '2022-02-04 11:53:26'),
+(145704, 'Habiba', '2020-2021', 'Computer', '1999-10-12', '01812345676', '2022-02-04 11:53:26'),
+(145705, 'Sabbir', '2020-2021', 'Garments', '2001-01-08', '01882211222', '2022-02-04 11:53:26'),
+(145706, 'Riki', '2018-2019', 'GDPM', '2022-01-21', '01812332212', '2022-02-04 11:53:26'),
+(145733, 'Himel', '2018-2019', 'Febric', '2022-01-27', '01812345622', '2022-02-04 11:53:26'),
+(145787, 'Mukta', '2018-2019', 'Computer', '2022-01-27', '01811223355', '2022-02-04 11:53:26'),
+(145789, 'Ashok Kumar Das', '2018-2019', 'Computer', '2001-01-06', '01821221122', '2022-02-04 11:53:26'),
+(145797, 'Shahed Mohammad Hridoy', '2018-2019', 'Computer', '2022-01-27', '01848135202', '2022-02-04 11:53:26'),
+(145798, 'Md. Nazim', '2018-2019', 'Telecommunication', '2022-01-27', '01812457826', '2022-02-04 11:53:26');
 
 -- --------------------------------------------------------
 
@@ -149,7 +172,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `active`, `created_at
 (2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1, '2021-10-17 01:10:40'),
 (3, 'inactive', '19d3894f53ce79c3f836f26cf8a3be3b', 1, 0, '2021-10-17 09:59:27'),
 (4, 'lora', 'lora', 1, 1, '0000-00-00 00:00:00'),
-(6, 'sh', 'shamimaosman', 1, 1, '2022-01-28 12:18:24'),
+(6, 'sh', 'shamimaosman', 2, 1, '2022-01-28 12:18:24'),
 (7, 'hafiz', '839a54bf20626e4942bc8f11873f0654', 1, 1, '2022-01-29 02:17:12'),
 (9, 'hannan', '77839d5cf53d09e62bdfca3d3172fab1', 1, 0, '2022-01-29 03:05:05'),
 (10, 'hnnn', '819cf3cbd890c3328531003f541239d6', 1, 1, '2022-01-29 03:05:34'),
@@ -167,6 +190,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `active`, `created_at
 ALTER TABLE `departments`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `department` (`department`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `students`
@@ -187,7 +216,8 @@ ALTER TABLE `teachers`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `role` (`role`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -200,6 +230,12 @@ ALTER TABLE `departments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
@@ -210,6 +246,16 @@ ALTER TABLE `teachers`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role`) REFERENCES `roles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
