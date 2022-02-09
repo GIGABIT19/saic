@@ -1,5 +1,12 @@
 <?php
 
+//session
+session_start();
+
+//config file
+include_once('../include.php');
+
+//check data posted or not
 if($_SERVER['REQUEST_METHOD']!='POST'){
     header('location: ../../students/');    
 }
@@ -11,9 +18,13 @@ $department = $_POST['update_department'];
 $birthdate = $_POST['update_birthdate'];
 $phone = $_POST['update_phone'];
 
-include_once('../include.php');
+//check birthdate submit or not
+if($birthdate==null){
+    $sql = "UPDATE `students` SET `roll`='$roll', `name`='$name', `session`='$session', `department`='$department', `phone`='$phone' WHERE `roll`='$roll'";
+} else {
+    $sql = "UPDATE `students` SET `roll`='$roll', `name`='$name', `session`='$session', `department`='$department', `birthdate`='$birthdate', `phone`='$phone' WHERE `roll`='$roll'";
+}
 
-$sql = "UPDATE `students` SET `roll`='$roll', `name`='$name', `session`='$session', `department`='$department', `birthdate`='$birthdate', `phone`='$phone' WHERE `roll`='$roll'";
 
 
 if($mysqli->query($sql) === TRUE) {
