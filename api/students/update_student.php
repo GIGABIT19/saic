@@ -8,11 +8,12 @@ $roll = $_POST['update_roll'];
 $name = $_POST['update_name'];
 $session = $_POST['update_session'];
 $department = $_POST['update_department'];
+$birthdate = $_POST['update_birthdate'];
 $phone = $_POST['update_phone'];
 
 include_once('../include.php');
 
-$sql = "UPDATE `students` SET `roll`='$roll', `name`='$name', `session`='$session', `department`='$department', `phone`='$phone' WHERE `roll`='$roll'";
+$sql = "UPDATE `students` SET `roll`='$roll', `name`='$name', `session`='$session', `department`='$department', `birthdate`='$birthdate', `phone`='$phone' WHERE `roll`='$roll'";
 
 
 if($mysqli->query($sql) === TRUE) {

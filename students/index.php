@@ -77,7 +77,8 @@ include "../api/include.php";
                 $('#update_name').val(data[1]);
                 $('#update_session').val(data[2]);
                 $('#update_department').val(data[3]);
-                $('#update_phone').val(data[4]);
+                $('#update_birthdate').val(data[4]);
+                $('#update_phone').val(data[5]);
             })
 
             //Delete Student Button On Click Action
@@ -337,6 +338,10 @@ include "../api/include.php";
                                     } //end if condition
                                 ?>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="update_birthdate">Birthdate:</label>
+                            <input type="date" name="update_birthdate" id="update_birthdate" class="form-control" onfocus="" onblur="">
                         </div>
                         <div class="form-group">
                             <label for="update_phone">Phone:</label>
