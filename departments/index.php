@@ -1,9 +1,7 @@
 <?php
-//------------------Authentication--------------------//
+//------------------ Authentication --------------------//
 session_start();
 //TO DO:
-
-
 
 include_once '../api/include.php';
 ?>
@@ -24,8 +22,17 @@ include_once '../api/include.php';
     <script>
         $(document).ready(function(){
             $('.edit-btn').on('click', function(){
-                //to do:
-                alert("Edit button clicked!");
+                $('#edit-modal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children('td').map(function(){
+                    return $(this).text();
+                }).get();
+
+                //console.log(data);
+                $('#update_department').val(data[0]);
+                $('#update_seat_capacity').val(data[1]);
             })
 
             $('.dlt-btn').on('click', function(){
@@ -113,6 +120,7 @@ include_once '../api/include.php';
                             <th>Department</th>
                             <th>Seat Capacity</th>
                             <th>Total Student</th>
+                            <th>Percentage</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -128,8 +136,14 @@ include_once '../api/include.php';
                             print "<td>";
                             $count_sql = "SELECT * FROM `students` WHERE `department`='$dep'";
                             $count_result = mysqli_query($mysqli,$count_sql);
-                            echo mysqli_num_rows($count_result);
-                            print "</td><td>";
+                            $totalstudent = mysqli_num_rows($count_result);
+                            print $totalstudent;
+
+                            $percent = floor($totalstudent/$row['seat_capacity']*100);
+
+                            print "</td>
+                            <td>".$percent." %</td>
+                            <td>";
                             print "<button class='btn btn-info edit-btn'><span class='glyphicon glyphicon-pencil'></span></button> ";
                             print "<button class='btn btn-danger dlt-btn'><span class='glyphicon glyphicon-trash'></span></button></td>";
                             print "</tr>";
@@ -145,7 +159,8 @@ include_once '../api/include.php';
                                 $seat_sql = "SELECT SUM(`seat_capacity`) FROM `departments`";
                                 $seat_result = mysqli_query($mysqli,$seat_sql);
                                 while($row = mysqli_fetch_array($seat_result)){
-                                    echo $row['SUM(`seat_capacity`)'];
+                                    $totalseat = $row['SUM(`seat_capacity`)'];
+                                    echo $totalseat;
                                     
                                 }
                                 ?>
@@ -154,7 +169,14 @@ include_once '../api/include.php';
                                 <?php
                                 $sql = "SELECT * FROM `students`";
                                 $result = mysqli_query($mysqli,$sql);
-                                echo mysqli_num_rows($result);
+                                $total_std = mysqli_num_rows($result);
+                                print $total_std;
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                $percentall = floor(($total_std/$totalseat)*100);
+                                echo $percentall." %";
                                 ?>
                             </td>
                             <td></td>
@@ -185,6 +207,33 @@ include_once '../api/include.php';
                         </div>
 
                         <input type="submit" value="Add Department" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--==================== Edit Department Modal ====================-->
+    <div class="modal fade" id="edit-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Department</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="">Department:</label>
+                            <input type="text" name="" id="update_department" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Seat Capacity:</label>
+                            <input type="number" name="" id="update_seat_capacity" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-info">
+                        </div>
                     </form>
                 </div>
             </div>
