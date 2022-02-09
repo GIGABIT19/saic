@@ -21,7 +21,7 @@ if(!isset($_SESSION['username'])){
         ('$roll', '$name', '$session', '$department', '$birthdate', '$phone')";
 
         if($mysqli->query($SQL) == TRUE){
-            $_SESSION['success_msg'] = "Student added successfully.";
+            $_SESSION['success_msg'] = "Student added";
             header("location: ../../students");
         } else {
             $_SESSION['error_msg'] = $mysqli->error;
