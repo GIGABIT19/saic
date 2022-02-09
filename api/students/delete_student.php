@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
             $sql = "DELETE FROM `students` WHERE `roll`='$delete_roll'";
             
             if($mysqli->query($sql) == TRUE){
-                $_SESSION['success_msg'] = "Student deleted";
+                $_SESSION['success_msg'] = "Deleted successfully.";
                 header('location: ../../students/');
             }
         }

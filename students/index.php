@@ -212,7 +212,7 @@ include "../api/include.php";
                             print "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='6'>No Data Found</td></tr>";
+                        echo "<tr><td colspan='6'>No data found</td></tr>";
                     }
                     ?>
                     
